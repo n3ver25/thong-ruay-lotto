@@ -1,227 +1,75 @@
 {
-  "Main": {
-    "document_display_name": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading1",
-        "label": "document_display_name"
+  "Main" : {
+    "text_banner" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label" : "text_banner"
       }
     },
-    "banner_title": {
-      "type": "StructuredText",
-      "config": {
-        "single": "heading2",
-        "label": "banner_title"
+    "text_title" : {
+      "type" : "StructuredText",
+      "config" : {
+        "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label" : "text_title"
       }
     },
-    "banner_description": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "label": "banner_description"
+    "detail_banner" : {
+      "type" : "StructuredText",
+      "config" : {
+        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label" : "text_detail"
       }
     },
-    "banner_link": {
-      "type": "Link",
-      "config": {
-        "select": "document",
-        "label": "banner_link"
+    "image_ssl" : {
+      "type" : "Image",
+      "config" : {
+        "constraint" : { },
+        "thumbnails" : [ ],
+        "label" : "image_ssl"
       }
     },
-    "banner_link_label": {
-      "type": "StructuredText",
-      "config": {
-        "single": "paragraph",
-        "label": "banner_link_label"
-      }
-    },
-    "banner_background": {
-      "type": "Image",
-      "config": {
-        "constraint": {
-          "width": 2000
-        },
-        "thumbnails": [],
-        "label": "banner_background"
-      }
-    },
-    "body": {
-      "type": "Slices",
-      "fieldset": "Slice zone",
-      "config": {
-        "labels": {
-          "text": [],
-          "quote": [],
-          "full_width_image": [],
-          "image_gallery": [],
-          "image_highlight": []
-        },
-        "choices": {
-          "text": {
-            "type": "Slice",
-            "fieldset": "Text",
-            "description": "Rich Text section with option for 1 or 2 columns",
-            "icon": "text_fields",
-            "display": "list",
-            "non-repeat": {
-              "columns": {
-                "type": "Select",
-                "config": {
-                  "options": ["1 Column", "2 Columns"],
-                  "default_value": "1 Column",
-                  "label": "columns"
-                }
-              },
-              "content": {
-                "type": "StructuredText",
-                "config": {
-                  "multi": "paragraph, heading2, heading3, strong, em, hyperlink",
-                  "allowTargetBlank": true,
-                  "label": "content"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "quote": {
-            "type": "Slice",
-            "fieldset": "Quote",
-            "description": "A stylized quote",
-            "icon": "format_quote",
-            "display": "list",
-            "non-repeat": {
-              "quote": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "allowTargetBlank": true,
-                  "label": "quote"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "full_width_image": {
-            "type": "Slice",
-            "fieldset": "Full Width Image",
-            "description": "A wide, thin image",
-            "icon": "broken_image",
-            "display": "list",
-            "non-repeat": {
-              "full_width_image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 980,
-                    "height": 300
-                  },
-                  "thumbnails": [],
-                  "label": "full_width_image"
-                }
-              }
-            },
-            "repeat": {}
-          },
-          "image_gallery": {
-            "type": "Slice",
-            "fieldset": "Image Gallery",
-            "description": "A collection of images with descriptions & links",
-            "icon": "image",
-            "display": "list",
-            "non-repeat": {
-              "gallery_title": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading2, heading3",
-                  "label": "gallery_title"
-                }
-              }
-            },
-            "repeat": {
-              "image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 727,
-                    "height": 402
-                  },
-                  "thumbnails": [],
-                  "label": "image"
-                }
-              },
-              "image_description": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "image_description"
-                }
-              },
-              "link": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "label": "link"
-                }
-              },
-              "link_label": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "link_label",
-                  "placeholder": "Optional link label"
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : null,
+        "choices" : {
+          "image_banner" : {
+            "type" : "Slice",
+            "fieldset" : "image_banner",
+            "description" : "image banner",
+            "icon" : "add_to_photos",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "banner_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "banner_image"
                 }
               }
             }
           },
-          "image_highlight": {
-            "type": "Slice",
-            "fieldset": "Image Highlight",
-            "description": "Section to highlight an image w/ a title, description, & link",
-            "icon": "star",
-            "display": "list",
-            "non-repeat": {
-              "featured_image": {
-                "type": "Image",
-                "config": {
-                  "constraint": {
-                    "width": 727,
-                    "height": 402
-                  },
-                  "thumbnails": [],
-                  "label": "featured_image"
-                }
-              },
-              "title": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading2",
-                  "label": "title"
-                }
-              },
-              "description": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "heading3, strong, em",
-                  "label": "description"
-                }
-              },
-              "link": {
-                "type": "Link",
-                "config": {
-                  "select": "document",
-                  "label": "link"
-                }
-              },
-              "link_label": {
-                "type": "StructuredText",
-                "config": {
-                  "single": "paragraph",
-                  "label": "link_label",
-                  "placeholder": "Optional link label"
+          "image_bank" : {
+            "type" : "Slice",
+            "fieldset" : "image_bank",
+            "description" : "image bank",
+            "icon" : "account_balance",
+            "display" : "list",
+            "non-repeat" : { },
+            "repeat" : {
+              "image_banker" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "image_banker"
                 }
               }
-            },
-            "repeat": {}
+            }
           }
         }
       }

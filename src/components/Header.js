@@ -34,22 +34,22 @@ export const Header = ({ isHomepage }) => {
               <Font to="/">หน้าแรก</Font>
             </li>
             <li>
-              <Font to="/about">ประกาศ</Font>
+              <Font to="/announce">ประกาศ</Font>
             </li>
             <li>
-              <Font to="/more-info">โปรโมชั่น</Font>
+              <Font to="/promotion">โปรโมชั่น</Font>
             </li>
             <li>
-              <Font to="/more-info">คู่มือการใช้งาน</Font>
+              <Font to="/user-manual">คู่มือการใช้งาน</Font>
             </li>
             <li>
-              <Font to="/more-info">กติกา</Font>
+              <Font to="/rules">กติกา</Font>
             </li>
             <li>
-              <Font to="/more-info">เกี่ยวกับเรา</Font>
+              <Font to="/about">เกี่ยวกับเรา</Font>
             </li>
             <li>
-              <Font to="/more-info">ติดต่อเรา</Font>
+              <Font to="/contact">ติดต่อเรา</Font>
             </li>
 
           </ul>
