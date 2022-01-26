@@ -1,98 +1,120 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
+import { graphql } from 'gatsby'
+import { RichText } from 'prismic-reactjs'
+import styled from 'styled-components'
+import Img from 'gatsby-image/withIEPolyfill'
 
-import skiLiftChairs from '../images/ski-lift-chairs.jpeg'
-import mountainRange from '../images/mountain-range.jpeg'
-import forrestAerialShot from '../images/forrest-aerial-shot.jpeg'
+const ImageOptimize = styled(Img)`
+  width: 100%;
+  height: 100%;
+`
 
-const About = () => (
-  <Layout>
-    <Seo
-      title="About"
-      description="Learn more about us who we are and what we do."
-    />
+const IconPosition = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`
 
-    <main className="container">
-      <section className="full-width-image content-section">
-        <img src={skiLiftChairs} alt="Ski lift chairs" />
-      </section>
+const ImagePosition = styled.div`
+  width: 100%;
+`
 
-      <section className="content-section text-section-2col">
-        <h1>About Us</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-          Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-        </p>
-      </section>
+const CardIcon = styled.div`
+  width: 100%;
+`
 
-      <section className="content-section text-section-col-1">
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
-          hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet
-          vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
-          laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor
-          eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Ut scelerisque
-          hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida
-          tristique. Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat
-          est. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a
-          mauris eget arcu gravida tristique.
-        </p>
-      </section>
+const About = ({ data }) => {
+  const doc = data.prismicAbout.data
+  const icon = doc?.body[0].items
+  console.log(doc)
+  return (
+    <Layout>
+      <Seo
+        title="About"
+        description="Learn more about us who we are and what we do."
+      />
 
-      <section className="content-section quote">
-        <blockquote>Lorem ipsum dolor site amet</blockquote>
-      </section>
-
-      <section className="content-section text-section-1col">
-        <p>
-          Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae
-          luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing,
-          commodo quis, gravida id, est. Sed lectus. Praesent elementum
-          hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat,
-          lacus a ultrices sagittis. Suspendisse mauris. Fusce accumsan mollis
-          eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer
-          adipiscing risus a sem. Nullam quis massa sit amet nibh viverra
-          malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel,
-          arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a
-          mauris eget arcu gravida tristique. Nunc iaculis mi in ante. Vivamus
-          imperdiet nibh feugiat est. Sed lectus. Praesent elementum hendrerit
-          tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a
-          ultrices sagittis. Suspendisse mauris. Fusce accumsan mollis eros.
-          Pellentesque a diam sit amet mi ullamcorper vehicula. Integer
-          adipiscing risus a sem.
-        </p>
-      </section>
-
-      <section className="image-gallery content-section">
-        <h2>Lorem ipsum dolor sit amet</h2>
-        <div className="gallery">
-          <div className="gallery-item">
-            <img src={forrestAerialShot} alt="Forrest aerial shot" />
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-              Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
-              neque, <em>aliquet vel</em>, dapibus id, mattis vel, nisi.
-            </p>
-            <p className="gallery-link">
-              <Link to="/more-info">Learn More</Link>
-            </p>
-          </div>
-          <div className="gallery-item">
-            <img src={mountainRange} alt="Mountain range" />
-            <p>
-              Sed egestas, ante et vulputate volutpat, eros pede semper est,
-              vitae luctus metus libero eu augue. Morbi purus libero, faucibus
-              adipiscing, commodo quis, gravida id, est.
-            </p>
-          </div>
+      <main className="container">
+        <div>
+          <div>{RichText.render(doc.about_title.raw)}</div>
+          <div>{RichText.render(doc.about_detail.raw)}</div>
         </div>
-      </section>
-    </main>
-  </Layout>
-)
 
+        <div>
+          <div>
+            <div> {RichText.render(doc.service_title.raw)} </div>
+            <div> {RichText.render(doc.service_detail.raw)}</div>
+          </div>
+          <IconPosition>
+            {icon.map((data) => (
+              <div>
+                <CardIcon>
+                  <ImageOptimize fluid={data?.service_image?.fluid} />
+                </CardIcon>
+                {RichText.render(data.service_title1.raw)}
+                {RichText.render(data.service_detail1.raw)}
+              </div>
+            ))}
+          </IconPosition>
+        </div>
+
+        <ImagePosition>
+          <ImageOptimize fluid={doc?.about_image?.fluid} />
+        </ImagePosition>
+      </main>
+    </Layout>
+  )
+}
 
 export default About
+
+export const query = graphql`
+  query MyQuery {
+    prismicAbout {
+      data {
+        about_detail {
+          raw
+        }
+        about_footer {
+          raw
+        }
+        about_image {
+          fluid(maxWidth: 1200) {
+            src
+          }
+        }
+        about_title {
+          raw
+        }
+        service_detail {
+          raw
+        }
+        service_title {
+          raw
+        }
+        body {
+          ... on PrismicAboutDataBodyService {
+            id
+            items {
+              service_detail1 {
+                raw
+              }
+              service_image {
+                fluid(maxWidth: 208) {
+                  src
+                }
+              }
+              service_title1 {
+                raw
+              }
+            }
+          }
+        }
+      }
+      type
+      id
+    }
+  }
+`

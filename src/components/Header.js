@@ -40,7 +40,7 @@ export const Header = ({ isHomepage }) => {
               <Font to="/promotion">โปรโมชั่น</Font>
             </li>
             <li>
-              <Font to="/user-manual">คู่มือการใช้งาน</Font>
+              <Font to="/manual_user">คู่มือการใช้งาน</Font>
             </li>
             <li>
               <Font to="/rules">กติกา</Font>

@@ -5,14 +5,11 @@ import prismicLogo from '../images/logo-prismic.svg'
 export const Footer = () => (
   <footer>
     <p>
-      Proudly published with{' '}
-      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
-        Prismic
-      </a>
+      สนใจสอบถามรายละเอียดที่และขอรับโบนัชต่างๆได้ที่
       <br />
-      <a href="https://prismic.io" target="_blank" rel="noopener noreferrer">
-        <img className="footer-logo" src={prismicLogo} alt="Prismic logo" />
-      </a>
+      Line: @thongruay ตลอด 24 ชม.
+      <br />
+      **เงื่อนไขเป็นไปตามที่แต่ละเอเย่นกำหนด**
     </p>
   </footer>
 )

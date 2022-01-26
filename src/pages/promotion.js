@@ -3,7 +3,7 @@ import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 
 
-const Promotion = () => (
+const PromotionMain = () => (
   <Layout>
     <Seo
       title="More Info"
@@ -16,4 +16,4 @@ const Promotion = () => (
   </Layout>
 )
 
-export default Promotion
+export default PromotionMain

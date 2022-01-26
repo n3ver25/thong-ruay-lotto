@@ -1,39 +1,25 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
-
-import homeBanner from '../images/home-banner.jpg'
 
 import AwesomeSlider from 'react-awesome-slider';
 import 'react-awesome-slider/dist/styles.css';
+import styled from 'styled-components';
 
-const slider = (
-  <AwesomeSlider>
-    <div data-src={homeBanner} />
-    <div data-src={homeBanner} />
-    <div data-src={homeBanner} />
-  </AwesomeSlider>
-);
 
-export const HomepageBanner = () => (
-  // <section
-  //   className="homepage-banner"
-  //   style={{
-  //     backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url(${homeBanner})`,
-  //   }}
-  // >
-  //   <div className="banner-content container">
-  //     <h2 className="banner-title">John Doe</h2>
-  //    { <p className="banner-description">
-  //       Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-  //       Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-  //       Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede
-  //       asdf.
-  //     </p>}
-  //     <Link to="/about" className="banner-button">
-  //       Learn More
-  //     </Link>
-  //   </div>
-  // </section>
-  <>
-  {slider}</>
-)
+const ImageSize = styled.div`
+width: 1232px; 
+margin:  50px auto;
+`
+
+export const HomepageBanner = ({doc}) => {
+  const slider = (
+    <AwesomeSlider>
+      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} />
+      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} />
+    </AwesomeSlider>
+  )
+  return (
+    <ImageSize >
+      {slider}
+    </ImageSize >
+  )
+}

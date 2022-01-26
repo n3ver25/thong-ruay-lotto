@@ -6,7 +6,7 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Prismic Tutorial',
+    title: 'Thong Ruay Lotto',
     description: 'Learn how to integrate Prismic into your Gatsby project.',
   },
   plugins: [
@@ -18,11 +18,13 @@ module.exports = {
           homepage: require('./custom_types/homepage.json'),
           navigation: require('./custom_types/navigation.json'),
           page: require('./custom_types/page.json'),
-          announce: require('./custom_types/page.json'),
-          contact: require('./custom_types/page.json'),
-          promotion: require('./custom_types/page.json'),
-          rules: require('./custom_types/page.json'),
-          "user-manual": require('./custom_types/page.json'),
+          announcepage: require('./custom_types/announcepage.json'),
+          announce: require('./custom_types/announce.json'),
+          contact: require('./custom_types/contact.json'),
+          promotion_main: require('./custom_types/promotion_main.json'),
+          rules: require('./custom_types/rules.json'),
+          about: require('./custom_types/about.json'),
+          manual_user: require('./custom_types/manual_user.json'),
         },
       },
     },
