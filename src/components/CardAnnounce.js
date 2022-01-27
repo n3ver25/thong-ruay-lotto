@@ -4,8 +4,12 @@ import Img from "gatsby-image/withIEPolyfill"
 import { RichText } from 'prismic-reactjs';
 
 const TestStyled = styled.div`
-width: 100%;
 display:flex;
+background-color:white;
+margin: 0px 23px 20px 23px;
+align-items: center;
+gap: 12px;
+padding: 40px 40px;
 `
 
 const ImageStyled = styled.div`
@@ -20,6 +24,17 @@ width: 100%;
 height: 100%;
 `
 
+const PositionFont = styled.div`
+margin: 20px 0;
+
+h1{
+    color: #9A0112;
+}
+p{
+    margin-bottom: 0px;
+}
+`
+
 export const CardAnnounce = ({ data }) => {
     return (
         <TestStyled>
@@ -28,10 +43,10 @@ export const CardAnnounce = ({ data }) => {
                     objectFit="cover"
                     objectPosition="50% 50%" />
             </ImageStyled>
-            <div>
+            <PositionFont>
                 {RichText.render(data.data.text_title.raw)}
                 {RichText.render(data.data.text_detail.raw)}
-            </div>
+            </PositionFont>
         </TestStyled>
     )
 }

@@ -12,7 +12,7 @@ const SizeHeader = styled.header`
   height: 223px;
 `
 const Font = styled(Link)`
-  color: black !important;
+  color: white !important;
 `
 const Page = styled.div`
   display: flex;
@@ -28,6 +28,7 @@ const OptimizeButton = styled.div`
   align-items: center;
   justify-content: center;
   margin-left: 40px;
+  color:white;
 `
 
 const CustomizeUl = styled.ul`

@@ -21,6 +21,10 @@ body {
   letter-spacing: 0.4;
   line-height: 28px;
   background-image: url('../images/background.png');
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: fixed;
+  background-size: cover;
 }
 
 a {
