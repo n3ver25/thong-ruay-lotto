@@ -22,6 +22,7 @@ module.exports = {
           announce: require('./custom_types/announce.json'),
           contact: require('./custom_types/contact.json'),
           promotion_main: require('./custom_types/promotion_main.json'),
+          promotion_sup: require('./custom_types/promotion_sup.json'),
           rules: require('./custom_types/rules.json'),
           about: require('./custom_types/about.json'),
           manual_user: require('./custom_types/manual_user.json'),

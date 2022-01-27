@@ -14,13 +14,13 @@
  * Globals
  */
 body {
-  padding: 20px;
   color: #72767b;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.4;
   line-height: 28px;
+  background-image: url('../images/background.png');
 }
 
 a {

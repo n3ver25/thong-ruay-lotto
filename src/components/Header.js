@@ -4,20 +4,34 @@ import logo from '../images/thonglottologo-logo.png'
 import styled from 'styled-components'
 
 const TestStyled = styled.img`
-height: 152px;
-width: 239px;
+  height: 152px;
+  width: 239px;
 `
 
 const SizeHeader = styled.header`
-height: 223px;
+  height: 223px;
 `
 const Font = styled(Link)`
-color: black !important;
+  color: black !important;
 `
 const Page = styled.div`
-display: flex;
-place-content: center;
-align-items: flex-end;
+  display: flex;
+  place-content: center;
+  align-items: flex-end;
+`
+
+const OptimizeButton = styled.div`
+  width: 230px;
+  height: 53px;
+  background: #bf0015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+`
+
+const CustomizeUl = styled.ul`
+margin:0 15px;
 `
 
 export const Header = ({ isHomepage }) => {
@@ -26,10 +40,12 @@ export const Header = ({ isHomepage }) => {
     <SizeHeader className={`site-header ${homepageClass}`}>
       <Page>
         <Link to="/">
-          <div className="logo"><TestStyled src={logo} alt="Logo" /></div>
+          <div className="logo">
+            <TestStyled src={logo} alt="Logo" />
+          </div>
         </Link>
         <nav>
-          <ul>
+          <CustomizeUl>
             <li>
               <Font to="/">หน้าแรก</Font>
             </li>
@@ -51,14 +67,12 @@ export const Header = ({ isHomepage }) => {
             <li>
               <Font to="/contact">ติดต่อเรา</Font>
             </li>
-
-          </ul>
+          </CustomizeUl>
         </nav>
         <div>
-          <button>สมัครสมาชิก / เข้าสู่ระบบ</button>
+          <OptimizeButton>สมัครสมาชิก / เข้าสู่ระบบ</OptimizeButton>
         </div>
       </Page>
-
     </SizeHeader>
   )
 }

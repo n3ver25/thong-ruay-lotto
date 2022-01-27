@@ -3,12 +3,16 @@ import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { graphql } from 'gatsby'
 import { CardRule } from '../components/CardRule'
+import styled from 'styled-components'
+
+const PositionCard = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+`
 
 const Rules = ({ data }) => {
   if (!data) return null
   const doc = data.allPrismicRules.nodes
-
-  console.log('doc', doc)
 
   return (
     <Layout>
@@ -18,17 +22,13 @@ const Rules = ({ data }) => {
       />
 
       <main className="container">
-        <div
-          css={`
-            display: grid;
-          `}
-        >
+        <PositionCard>
           {doc.map((data) => (
             <>
-              <CardRule data={data} />
+              <CardRule data={data.data} />
             </>
           ))}
-        </div>
+        </PositionCard>
       </main>
     </Layout>
   )
