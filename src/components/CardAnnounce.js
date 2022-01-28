@@ -9,7 +9,7 @@ background-color:white;
 margin: 0px 23px 20px 23px;
 align-items: center;
 gap: 12px;
-padding: 40px 40px;
+padding: 20px;
 `
 
 const ImageStyled = styled.div`

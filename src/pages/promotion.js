@@ -4,12 +4,27 @@ import { Seo } from '../components/Seo'
 import { graphql } from 'gatsby'
 import { CardPromotionSup } from '../components/CardPromotionSup'
 import { CardPromotionMain } from '../components/CardPromotionMain'
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const PositionPromotion = styled.div`
-display:flex;
+  display: flex;
+  place-content: center;
 `
+const HeaderPage = styled.div`
+  height: 96px;
+  background: #c4c4c4;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: -0.015em;
 
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
 
 const PromotionMain = ({ data }) => {
   const docPromotionMain = data.allPrismicPromotionMain.nodes
@@ -23,6 +38,7 @@ const PromotionMain = ({ data }) => {
       />
 
       <main className="container">
+        <HeaderPage>โปรโมชั่นเสริม THONG LOTTO</HeaderPage>
         <PositionPromotion>
           {docPromotionSup.map((data) => (
             <>
@@ -30,6 +46,8 @@ const PromotionMain = ({ data }) => {
             </>
           ))}
         </PositionPromotion>
+        <HeaderPage>โปรโมชั่นหลัก THONG LOTTO</HeaderPage>
+
         <PositionPromotion>
           {docPromotionMain.map((data) => (
             <>

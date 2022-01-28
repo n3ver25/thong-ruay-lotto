@@ -19,16 +19,82 @@ const IconPosition = styled.div`
 
 const ImagePosition = styled.div`
   width: 100%;
+  height: 423px;
 `
 
 const CardIcon = styled.div`
-  width: 100%;
+  width: 208px;
+  height: 208px;
+  margin: 20px auto;
+`
+
+const TitlePage = styled.div`
+  background: #bf0015;
+  text-align: center;
+  padding: 53px;
+  h1 {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #ffffff;
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #ffffff;
+  }
+`
+const Service = styled.div`
+  background: #ffffff;
+  padding: 40px;
+`
+
+const ServiceFont = styled.div`
+  h1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+  }
+`
+
+const IconTask = styled.div`
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    margin-bottom: 0;
+  }
 `
 
 const About = ({ data }) => {
   const doc = data.prismicAbout.data
   const icon = doc?.body[0].items
-  console.log(doc)
   return (
     <Layout>
       <Seo
@@ -37,28 +103,30 @@ const About = ({ data }) => {
       />
 
       <main className="container">
-        <div>
+        <TitlePage>
           <div>{RichText.render(doc.about_title.raw)}</div>
           <div>{RichText.render(doc.about_detail.raw)}</div>
-        </div>
+        </TitlePage>
 
-        <div>
-          <div>
+        <Service>
+          <ServiceFont>
             <div> {RichText.render(doc.service_title.raw)} </div>
             <div> {RichText.render(doc.service_detail.raw)}</div>
-          </div>
+          </ServiceFont>
           <IconPosition>
             {icon.map((data) => (
-              <div>
-                <CardIcon>
-                  <ImageOptimize fluid={data?.service_image?.fluid} />
-                </CardIcon>
-                {RichText.render(data.service_title1.raw)}
-                {RichText.render(data.service_detail1.raw)}
-              </div>
+              <>
+                <IconTask>
+                  <CardIcon>
+                    <ImageOptimize fluid={data?.service_image?.fluid} />
+                  </CardIcon>
+                  {RichText.render(data.service_title1.raw)}
+                  {RichText.render(data.service_detail1.raw)}
+                </IconTask>
+              </>
             ))}
           </IconPosition>
-        </div>
+        </Service>
 
         <ImagePosition>
           <ImageOptimize fluid={doc?.about_image?.fluid} />

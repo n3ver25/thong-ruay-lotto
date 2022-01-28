@@ -8,6 +8,10 @@ import styled from 'styled-components'
 const PositionCard = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+  max-inline-size: fit-content;
+  margin: auto;
+  margin-bottom: 10px;
 `
 
 const Rules = ({ data }) => {
