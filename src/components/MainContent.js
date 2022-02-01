@@ -73,6 +73,12 @@ const ImageOptimize = styled(Img)`
 const SizeImage = styled.div`
   width: 78px;
   height: 78px;
+  @media (max-width: 554px) {
+    .fHMqeJ {
+      width: 26px !important;
+      height: 26px !important;
+    }
+  }
 `
 
 export const MainContent = ({ doc }) => {
@@ -84,9 +90,7 @@ export const MainContent = ({ doc }) => {
         <DetailText>{RichText.render(doc?.detail_banner?.raw)}</DetailText>
       </Position>
 
-      <div>
-        {/* <Lotto /> */}
-      </div>
+      <div>{/* <Lotto /> */}</div>
       <SupTitle>
         เว็บหวยออนไลน์ ทองลอตโต้ (thong lotto) มีการเข้ารหัสข้อมูล 256 บิต
         ข้อมูลของท่านมีความปลอดภัย 100%

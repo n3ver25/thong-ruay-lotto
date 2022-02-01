@@ -16,7 +16,6 @@ const ImageStyled = styled.div`
 width: 100%;
 max-width: 417px;
 height: 300px;
-background-color: red;
 `
 
 const ImageOptimize = styled(Img)`
@@ -40,7 +39,7 @@ export const CardAnnounce = ({ data }) => {
         <TestStyled>
             <ImageStyled>
                 <ImageOptimize fluid={data?.data?.image_announce?.fluid}
-                    objectFit="cover"
+                    objectFit="contain"
                     objectPosition="50% 50%" />
             </ImageStyled>
             <PositionFont>

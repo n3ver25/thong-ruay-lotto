@@ -50,13 +50,13 @@ export const CardRule = ({ data }) => {
       <ImageStyled>
         <ImageOptimize
           fluid={data?.rules_image?.fluid}
-          objectFit="cover"
+          objectFit="contain"
           objectPosition="50% 50%"
         />
       </ImageStyled>
       <OptimizeFont>
         {RichText.render(data.rules_title.raw)}
-        {RichText.render(data.rules_detail.raw)}
+        {RichText.asText(data.rules_detail.raw)}
       </OptimizeFont>
     </TestStyled>
   )

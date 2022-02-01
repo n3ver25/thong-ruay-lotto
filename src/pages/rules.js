@@ -14,6 +14,22 @@ const PositionCard = styled.div`
   margin-bottom: 10px;
 `
 
+const HeaderPage = styled.div`
+  height: 96px;
+  background: #c4c4c4;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
+
 const Rules = ({ data }) => {
   if (!data) return null
   const doc = data.allPrismicRules.nodes
@@ -26,6 +42,7 @@ const Rules = ({ data }) => {
       />
 
       <main className="container">
+      <HeaderPage>กติกา THONG LOTTO</HeaderPage>
         <PositionCard>
           {doc.map((data) => (
             <>

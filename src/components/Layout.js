@@ -29,6 +29,8 @@ const CustomizeUl = styled.ul`
   background: #bf0015;
   text-align-last: center;
   margin-bottom: 0px;
+  padding: 60px;
+
   @media (max-width: 1025px) {
     display: block;
   }

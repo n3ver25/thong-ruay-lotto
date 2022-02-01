@@ -7,6 +7,7 @@ const TestStyled = styled.div`
   width: 100%;
   display: flex;
   margin: 10px auto;
+  width: fit-content;
   @media (max-width: 1025px) {
     margin: 10px 60px;
   }
@@ -28,6 +29,9 @@ const OptimizeFont = styled.div`
   padding: 32px;
   width: 30%;
   overflow-wrap: break-word;
+  @media (max-width: 1025px) {
+    padding: 22px;
+  }
   h1 {
     margin-bottom: 0;
     font-size: 24px;
@@ -37,7 +41,7 @@ const OptimizeFont = styled.div`
     color: #9a0112;
 
     @media (max-width: 1025px) {
-      font-size: 18px;
+      font-size: 14px;
     }
   }
   p {
@@ -68,6 +72,9 @@ const OptimizeButton = styled.button`
 const DetailBox = styled.div`
   max-height: 93px;
   overflow: hidden;
+  @media (max-width: 1025px) {
+    max-height: 27px;
+  }
 `
 
 export const CardUserManual = ({ data }) => {

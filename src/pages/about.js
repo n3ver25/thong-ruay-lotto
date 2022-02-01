@@ -26,12 +26,19 @@ const CardIcon = styled.div`
   width: 208px;
   height: 208px;
   margin: 20px auto;
+  @media(max-width: 1025px){
+    width: 120px;
+    height: 120px;
+  }
 `
 
 const TitlePage = styled.div`
   background: #bf0015;
   text-align: center;
   padding: 53px;
+  @media(max-width: 1025px){
+    padding: 15px;
+  }
   h1 {
     font-size: 36px;
     line-height: 42px;
@@ -39,6 +46,9 @@ const TitlePage = styled.div`
     letter-spacing: -0.015em;
 
     color: #ffffff;
+    @media(max-width: 1025px){
+      font-size: 20px;
+    }
   }
   p {
     font-size: 24px;
@@ -47,6 +57,10 @@ const TitlePage = styled.div`
     letter-spacing: -0.015em;
 
     color: #ffffff;
+    margin-bottom: 0;
+    @media(max-width: 1025px){
+      font-size: 14px;
+    }
   }
 `
 const Service = styled.div`
@@ -63,6 +77,9 @@ const ServiceFont = styled.div`
     letter-spacing: -0.015em;
 
     color: #000000;
+    @media(max-width: 1025px){
+      font-size: 18px;
+    }
   }
   p {
     font-size: 24px;
@@ -71,6 +88,9 @@ const ServiceFont = styled.div`
     letter-spacing: -0.015em;
 
     color: #000000;
+    @media(max-width: 1025px){
+      font-size: 18px;
+    }
   }
 `
 
@@ -82,6 +102,9 @@ const IconTask = styled.div`
     letter-spacing: -0.015em;
     font-weight: bold;
     margin-bottom: 20px;
+    @media(max-width: 1025px){
+      font-size: 14px;
+    }
   }
   p {
     font-size: 24px;
@@ -89,6 +112,10 @@ const IconTask = styled.div`
     text-align: center;
     letter-spacing: -0.015em;
     margin-bottom: 0;
+
+    @media(max-width: 1025px){
+      font-size: 14px;
+    }
   }
 `
 
@@ -129,7 +156,7 @@ const About = ({ data }) => {
         </Service>
 
         <ImagePosition>
-          <ImageOptimize fluid={doc?.about_image?.fluid} />
+          <ImageOptimize fluid={doc?.about_image?.fluid} objectFit="contain"  />
         </ImagePosition>
       </main>
     </Layout>
