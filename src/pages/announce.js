@@ -14,6 +14,9 @@ const AllAnnounce = styled.div`
   width: 30%;
   background: #bf0015;
   padding: 20px;
+  @media (max-width: 1025px) {
+    display: none;
+  }
 `
 
 const AllAnnounceContent = styled.div`

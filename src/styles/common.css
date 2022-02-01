@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
 * {
   -webkit-font-smoothing: antialiased;
 }
@@ -22,9 +24,10 @@ body {
   line-height: 28px;
   background-image: url('../images/background.png');
   background-repeat: no-repeat;
-  background-position: right top;
   background-attachment: fixed;
   background-size: cover;
+  height: 100%;
+  background-position: center;
 }
 
 a {
@@ -45,11 +48,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-  font-family: 'Amiri', Serif;
+  font-family: 'Roboto', sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #484d52;

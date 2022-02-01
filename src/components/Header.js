@@ -4,8 +4,9 @@ import logo from '../images/thonglottologo-logo.png'
 import styled from 'styled-components'
 
 const TestStyled = styled.img`
-  height: 152px;
-  width: 239px;
+  max-height: 152px;
+  max-width: 239px;
+  width: 100%;
 `
 
 const SizeHeader = styled.header`
@@ -18,25 +19,53 @@ const Page = styled.div`
   display: flex;
   place-content: center;
   align-items: flex-end;
+
+  @media (max-width: 1025px) {
+    justify-content: space-between;
+  }
 `
 
 const OptimizeButton = styled.div`
-  width: 230px;
+  max-width: 230px;
   height: 53px;
+  padding: 0 5px;
+  width: 100%;
   background: #bf0015;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-left: 40px;
-  color:white;
+  color: white;
+  @media (max-width: 1160px) {
+    margin-left: 0;
+  }
 `
 
 const CustomizeUl = styled.ul`
-margin:0 15px;
+  margin: 0 15px;
+  @media (max-width: 1025px) {
+    display: none;
+  }
 `
 
-export const Header = ({ isHomepage }) => {
+const HambergerOptimize = styled.span`
+align-self: center;
+margin:0 10px;
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  @media (max-width: 1025px) {
+    display: block;
+  }
+`
+
+const ResgisterButton = styled.div`
+  display: flex;
+`
+
+export const Header = ({ isHomepage, setNavBar }) => {
   const homepageClass = isHomepage ? 'homepage-header' : ''
+
   return (
     <SizeHeader className={`site-header ${homepageClass}`}>
       <Page>
@@ -70,9 +99,12 @@ export const Header = ({ isHomepage }) => {
             </li>
           </CustomizeUl>
         </nav>
-        <div>
+        <ResgisterButton>
           <OptimizeButton>สมัครสมาชิก / เข้าสู่ระบบ</OptimizeButton>
-        </div>
+          <HambergerOptimize onClick={() => setNavBar(true)}>
+            &#9776;
+          </HambergerOptimize>
+        </ResgisterButton>
       </Page>
     </SizeHeader>
   )

@@ -6,7 +6,7 @@ import styled from 'styled-components';
 
 
 const ImageSize = styled.div`
-width: 1232px; 
+max-width: 1232px; 
 margin:  50px auto;
 `
 

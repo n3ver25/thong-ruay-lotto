@@ -8,13 +8,19 @@ const TestStyled = styled.div`
   background: white;
   max-width: fit-content;
   padding: 10px;
+  @media screen (max-width: 1025px){
+    height: 316px;
+  }
 `
 
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 417px;
   height: 330px;
-  background-color: red;
+
+  @media screen (max-width: 1025px){
+    height: 316px;
+  }
 `
 
 const ImageOptimize = styled(Img)`
@@ -34,6 +40,7 @@ h1{
 p{
   font-size: 18px;
   line-height: 28px;
+  margin-bottom: 0;
 }
   `
 

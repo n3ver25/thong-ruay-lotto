@@ -6,7 +6,6 @@ import { RichText } from 'prismic-reactjs'
 const TestStyled = styled.div`
   width: 100%;
   background: white;
-  margin: 3px;
   max-width: 372px;
 `
 

@@ -7,13 +7,15 @@ const TestStyled = styled.div`
   width: 100%;
   display: flex;
   margin: 10px auto;
+  @media (max-width: 1025px) {
+    margin: 10px 60px;
+  }
 `
 
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 1000px;
-  height: 300px;
-  background-color: red;
+  max-height: 300px;
 `
 
 const ImageOptimize = styled(Img)`
@@ -25,6 +27,7 @@ const OptimizeFont = styled.div`
   background: white;
   padding: 32px;
   width: 30%;
+  overflow-wrap: break-word;
   h1 {
     margin-bottom: 0;
     font-size: 24px;
@@ -32,10 +35,18 @@ const OptimizeFont = styled.div`
     letter-spacing: -0.015em;
 
     color: #9a0112;
+
+    @media (max-width: 1025px) {
+      font-size: 18px;
+    }
   }
   p {
     margin-bottom: 0;
     font-size: 18px;
+
+    @media (max-width: 1025px) {
+      font-size: 12px;
+    }
   }
 `
 
@@ -54,19 +65,24 @@ const OptimizeButton = styled.button`
   border: solid;
 `
 
+const DetailBox = styled.div`
+  max-height: 93px;
+  overflow: hidden;
+`
+
 export const CardUserManual = ({ data }) => {
   return (
     <TestStyled>
       <ImageStyled>
         <ImageOptimize
           fluid={data?.manual_user_image?.fluid}
-          objectFit="cover"
+          objectFit="contain"
           objectPosition="50% 50%"
         />
       </ImageStyled>
       <OptimizeFont>
         {RichText.render(data.manual_user_title.raw)}
-        {RichText.render(data.manual_user_detail.raw)}
+        <DetailBox>{RichText.asText(data.manual_user_detail.raw)}</DetailBox>
         <PositionButton>
           <OptimizeButton>ข้อมูลเพิ่มเติม</OptimizeButton>
         </PositionButton>

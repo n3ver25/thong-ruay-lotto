@@ -14,7 +14,7 @@ const Text = styled.div`
     font-weight: normal;
     font-size: 18px;
     line-height: 21px;
-    -webkit-text-stroke: 0.8px black;
+    -webkit-text-stroke: 0.2px black;
 
     text-align: center;
     letter-spacing: -0.015em;
@@ -22,6 +22,12 @@ const Text = styled.div`
     color: #e0b959;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     margin-bottom: 0 !important;
+
+    @media (max-width: 1025px) {
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+    }
   }
 `
 
@@ -31,6 +37,11 @@ const TextBanner = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 40px;
+
+  @media (max-width: 1025px) {
+    margin: 0 60px;
+  }
 `
 
 const Homepage = ({ data }) => {
@@ -71,7 +82,7 @@ export const query = graphql`
             id
             items {
               banner_image {
-                fluid  {
+                fluid {
                   src
                 }
               }
@@ -82,7 +93,7 @@ export const query = graphql`
           raw
         }
         image_ssl {
-          fluid  {
+          fluid {
             src
           }
         }
