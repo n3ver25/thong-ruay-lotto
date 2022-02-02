@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React, { useEffect } from 'react'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { HomepageBanner } from '../components/HomepageBanner'
@@ -69,8 +69,11 @@ const TextBanner = styled.div`
 `
 
 const Homepage = ({ data }) => {
-  if (!data) return null
   const doc = data.prismicHomepage.data
+
+  useEffect(() => {
+    if (!data) return null
+  }, [])
 
   return (
     <Layout isHomepage>

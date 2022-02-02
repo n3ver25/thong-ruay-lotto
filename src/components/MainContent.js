@@ -31,7 +31,7 @@ const DetailText = styled.div`
 
     font-weight: normal;
     font-size: 30px;
-    margin-bottom: 0;
+    margin-bottom: 5px;
     text-align: center;
     letter-spacing: -0.015em;
     @media (max-width: 1025px) {

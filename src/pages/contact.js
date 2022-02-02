@@ -65,12 +65,13 @@ const OptimizeIcon = styled.img`
   height: 62px;
 `
 
-const LinePosition = styled.div`
+const LinePosition = styled.a`
   display: flex;
   text-align: start;
   font-size: 24px;
   line-height: 28px;
   letter-spacing: -0.015em;
+  align-items: center;
 
   color: #ffffff;
   justify-content: center;
@@ -90,18 +91,17 @@ const Contact = ({ data }) => {
         <LayoutPage>
           <div>{RichText.render(doc.contact_title.raw)}</div>
           <div>{RichText.render(doc.contact_detail.raw)}</div>
-          <LinePosition>
+          <LinePosition href={'http://line.me/ti/p/@thongdeeee'}>
             <OptimizeIcon src={IconLine} />
-            <div>
-              LINE: @thongdeee <br />
-              http://line.me/ti/p/@thongdeeee
-            </div>
+            LINE: @thongdeee
           </LinePosition>
         </LayoutPage>
-        <ButtonConnect>
-          ติดต่อสอบถาม
-          <ClickPosition>คลิก</ClickPosition>
-        </ButtonConnect>
+        <a href={'http://line.me/ti/p/@thongdeeee'}>
+          <ButtonConnect>
+            ติดต่อสอบถาม
+            <ClickPosition>คลิก</ClickPosition>
+          </ButtonConnect>
+        </a>
       </main>
     </Layout>
   )

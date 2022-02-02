@@ -32,27 +32,6 @@ const Page = styled.div`
   }
 `
 
-const OptimizeButton = styled.div`
-  max-width: 230px;
-  height: 53px;
-  padding: 0 5px;
-  width: 100%;
-  background: #bf0015;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 40px;
-  color: white;
-  @media (max-width: 1160px) {
-    margin-left: 0;
-  }
-  @media (max-width: 767px) {
-    font-size: 8px;
-    line-height: 15px;
-    height: 22px;
-  }
-`
-
 const CustomizeUl = styled.ul`
   margin: 0 15px;
   @media (max-width: 1025px) {
@@ -74,6 +53,51 @@ const HambergerOptimize = styled.span`
 const ResgisterButton = styled.div`
   display: flex;
   align-items: center;
+`
+
+const OptimizeButtonRegister = styled.button`
+  border: none;
+  max-width: 115px;
+  height: 53px;
+  padding: 0 5px;
+  width: 100%;
+  background: #bf0015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5px;
+  color: white;
+  min-width: fit-content;
+  @media (max-width: 1160px) {
+    margin-left: 3;
+  }
+  @media (max-width: 767px) {
+    font-size: 8px;
+    line-height: 15px;
+    height: 22px;
+  }
+`
+
+const OptimizeButton = styled.button`
+  border: none;
+  max-width: 115px;
+  height: 53px;
+  padding: 0 5px;
+  width: 100%;
+  background: #bf0015;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 40px;
+  color: white;
+  @media (max-width: 1160px) {
+    margin-left: 0;
+  }
+  @media (max-width: 767px) {
+    font-size: 8px;
+    line-height: 15px;
+    height: 22px;
+  }
 `
 
 export const Header = ({ isHomepage, setNavBar }) => {
@@ -113,7 +137,13 @@ export const Header = ({ isHomepage, setNavBar }) => {
           </CustomizeUl>
         </nav>
         <ResgisterButton>
-          <OptimizeButton>สมัครสมาชิก / เข้าสู่ระบบ</OptimizeButton>
+          <a href="https://www.thonglotto.com/">
+            <OptimizeButton> เข้าสู่ระบบ</OptimizeButton>
+          </a>
+          <a href="https://www.thonglotto.com/member/c13699">
+            <OptimizeButtonRegister>สมัครสมาชิก</OptimizeButtonRegister>
+          </a>
+
           <HambergerOptimize onClick={() => setNavBar(true)}>
             &#9776;
           </HambergerOptimize>
