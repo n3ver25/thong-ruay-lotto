@@ -7,6 +7,9 @@ const TestStyled = styled.div`
   width: 100%;
   background: white;
   max-width: 372px;
+  @media (max-width: 1025px) {
+    max-height: 372px;
+  }
 `
 
 const ImageStyled = styled.div`
@@ -43,7 +46,7 @@ export const CardPromotionSup = ({ data }) => {
       <ImageStyled>
         <ImageOptimize
           fluid={data?.promotion_title_sup?.fluid}
-          objectFit="cover"
+          objectFit="contain"
           objectPosition="50% 50%"
         />
       </ImageStyled>

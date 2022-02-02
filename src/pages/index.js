@@ -5,9 +5,28 @@ import { HomepageBanner } from '../components/HomepageBanner'
 import { MainContent } from '../components/MainContent'
 import { graphql } from 'gatsby'
 import { RichText } from 'prismic-reactjs'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
+
+const slideRight = keyframes`
+from {
+  margin-left: 100%;
+  width: 300%;
+}
+
+to {
+  margin-left: -100%;
+  width: 100%;
+}
+`
 
 const Text = styled.div`
+  width: 100%;
+  overflow: hidden;
+  display: inline-block;
+  animation: ${slideRight} 10s linear infinite;
+  animation-delay: 2s;
+  white-space: pre;
+
   p {
     font-family: Roboto;
     font-style: normal;
@@ -38,9 +57,14 @@ const TextBanner = styled.div`
   align-items: center;
   justify-content: center;
   margin: 0 40px;
+  overflow: hidden;
 
   @media (max-width: 1025px) {
     margin: 0 60px;
+  }
+  @media (max-width: 767px) {
+    height: 18px;
+    margin: 0 3px;
   }
 `
 

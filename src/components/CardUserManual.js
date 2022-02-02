@@ -11,6 +11,9 @@ const TestStyled = styled.div`
   @media (max-width: 1025px) {
     margin: 10px 60px;
   }
+  @media (max-width: 767px) {
+    margin: 13px;
+  }
 `
 
 const ImageStyled = styled.div`
@@ -30,7 +33,10 @@ const OptimizeFont = styled.div`
   width: 30%;
   overflow-wrap: break-word;
   @media (max-width: 1025px) {
-    padding: 22px;
+    padding: 20px;
+  }
+  @media (max-width: 767px) {
+    padding: 12px;
   }
   h1 {
     margin-bottom: 0;
@@ -43,6 +49,10 @@ const OptimizeFont = styled.div`
     @media (max-width: 1025px) {
       font-size: 14px;
     }
+    @media (max-width: 767px) {
+      font-size: 10px;
+      line-height: 10px;
+    }
   }
   p {
     margin-bottom: 0;
@@ -51,6 +61,9 @@ const OptimizeFont = styled.div`
     @media (max-width: 1025px) {
       font-size: 12px;
     }
+    @media (max-width: 767px) {
+      font-size: 10px;
+    }
   }
 `
 
@@ -58,6 +71,9 @@ const PositionButton = styled.div`
   display: flex;
   justify-content: center;
   margin-top: 26px;
+  @media (max-width: 767px) {
+    margin-top: 7px;
+  }
 `
 
 const OptimizeButton = styled.button`
@@ -67,6 +83,12 @@ const OptimizeButton = styled.button`
   background: #bf0015;
   color: white;
   border: solid;
+  @media (max-width: 767px) {
+    width: 64px;
+    height: 10px;
+    border: none;
+    font-size: 7px;
+  }
 `
 
 const DetailBox = styled.div`
@@ -89,7 +111,9 @@ export const CardUserManual = ({ data }) => {
       </ImageStyled>
       <OptimizeFont>
         {RichText.render(data.manual_user_title.raw)}
-        <DetailBox>{RichText.asText(data.manual_user_detail.raw)}</DetailBox>
+        <DetailBox>
+          <p>{RichText.asText(data.manual_user_detail.raw)}</p>
+        </DetailBox>
         <PositionButton>
           <OptimizeButton>ข้อมูลเพิ่มเติม</OptimizeButton>
         </PositionButton>

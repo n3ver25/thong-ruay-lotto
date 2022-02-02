@@ -26,6 +26,19 @@ const HeaderPage = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @media (max-width: 1025px) {
+    height: 56px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+  }
 `
 
 const OptimizeAliceCarousel = styled(AliceCarousel)`
@@ -38,6 +51,9 @@ const OptimizeAliceCarousel = styled(AliceCarousel)`
   .alice-carousel__stage-item __active __target {
     width: fit-content !important;
   }
+  .alice-carousel__stage-item {
+    width: 100% !important;
+  }
 `
 
 const CssThumb = styled.div`
@@ -47,67 +63,129 @@ const CssThumb = styled.div`
   }
 `
 
+const PrevButton = styled.div`
+  align-self: center;
+  font-size: 165px;
+  cursor: pointer;
+  margin-right: 15px;
+`
+
+const NextButton = styled.div`
+  align-self: center;
+  font-size: 165px;
+  cursor: pointer;
+`
+
 const PromotionMain = ({ data }) => {
   const docPromotionMain = data.allPrismicPromotionMain.nodes
   const docPromotionSup = data.allPrismicPromotionSup.nodes
 
   const [promotionSup, setPromotionSup] = useState([])
-  const [mainIndex, setMainIndex] = useState(0)
-  const [mainAnimation, setMainAnimation] = useState(false)
-  const [thumbIndex, setThumbIndex] = useState(0)
-  const [thumbAnimation, setThumbAnimation] = useState(false)
+  const [mainIndexSup, setMainIndexSup] = useState(0)
+  const [mainAnimationSup, setMainAnimationSup] = useState(false)
+  const [thumbIndexSup, setThumbIndexSup] = useState(0)
+  const [thumbAnimationSup, setThumbAnimationSup] = useState(false)
 
-  const [prepare, setPrepare] = useState([])
+  const [promotionMain, setPromotionMain] = useState([])
+  const [mainIndexMain, setMainIndexMain] = useState(0)
+  const [mainAnimationMain, setMainAnimationMain] = useState(false)
+  const [thumbIndexMain, setThumbIndexMain] = useState(0)
+  const [thumbAnimationMain, setThumbAnimationMain] = useState(false)
 
-  const slideNext = () => {
-    if (!thumbAnimation && thumbIndex < prepare.length - 1) {
-      setThumbAnimation(true)
-      setThumbIndex(thumbIndex + 1)
+  const slideNextSup = () => {
+    if (!thumbAnimationSup && thumbIndexSup < promotionSup.length - 1) {
+      setThumbAnimationSup(true)
+      setThumbIndexSup(thumbIndexSup + 1)
     }
   }
 
-  const slidePrev = () => {
-    if (!thumbAnimation && thumbIndex > 0) {
-      setThumbAnimation(true)
-      setThumbIndex(thumbIndex - 1)
+  const slidePrevSup = () => {
+    if (!thumbAnimationSup && thumbIndexSup > 0) {
+      setThumbAnimationSup(true)
+      setThumbIndexSup(thumbIndexSup - 1)
     }
   }
 
-  const syncThumbs = (e) => {
-    setThumbIndex(e.item)
-    setThumbAnimation(false)
+  const syncThumbsSup = (e) => {
+    setThumbIndexSup(e.item)
+    setThumbAnimationSup(false)
 
-    if (!mainAnimation) {
-      setMainIndex(e.item)
+    if (!mainAnimationSup) {
+      setMainIndexSup(e.item)
+    }
+  }
+
+  const slideNextMain = () => {
+    if (!thumbAnimationMain && thumbIndexMain < promotionMain.length - 1) {
+      setThumbAnimationMain(true)
+      setThumbIndexMain(thumbIndexMain + 1)
+    }
+  }
+
+  const slidePrevMain = () => {
+    if (!thumbAnimationMain && thumbIndexMain > 0) {
+      setThumbAnimationMain(true)
+      setThumbIndexMain(thumbIndexMain - 1)
+    }
+  }
+
+  const syncThumbsMain = (e) => {
+    setThumbIndexMain(e.item)
+    setThumbAnimationMain(false)
+
+    if (!mainAnimationMain) {
+      setMainIndexMain(e.item)
     }
   }
 
   useEffect(() => {
-    const test = docPromotionSup.map((data) => (
+    const sup = docPromotionSup.map((data) => (
       <>
         <CardPromotionSup data={data.data} />
       </>
     ))
-    setPromotionSup(test)
-    const thumbFunc = thumbItems(test, [setThumbIndex, setThumbAnimation])
-    setPrepare(thumbFunc)
+    const thumbFuncSup = thumbItemsSup(sup, [
+      setThumbIndexSup,
+      setThumbAnimationSup,
+    ])
+    setPromotionSup(thumbFuncSup)
+    const main = docPromotionMain.map((data) => (
+      <>
+        <CardPromotionMain data={data.data} />
+      </>
+    ))
+    const thumbFuncMain = thumbItemsMain(main, [
+      setThumbIndexSup,
+      setThumbAnimationSup,
+    ])
+    setPromotionSup(thumbFuncMain)
   }, [])
 
-  const thumbItems = (items, [setThumbIndex, setThumbAnimation]) => {
+  const thumbItemsSup = (items, [setThumbIndexSup, setThumbAnimationSup]) => {
     return docPromotionSup.map((data, i) => (
       <div
         className="thumb"
-        onClick={() => (setThumbIndex(i), setThumbAnimation(true))}
+        onClick={() => (setThumbIndexSup(i), setThumbAnimationSup(true))}
       >
         <CardPromotionSup data={data.data} />
+      </div>
+    ))
+  }
+  const thumbItemsMain = (items, [setThumbIndexSup, setThumbAnimationSup]) => {
+    return docPromotionMain.map((data, i) => (
+      <div
+        className="thumb"
+        onClick={() => (setThumbIndexSup(i), setThumbAnimationSup(true))}
+      >
+        <CardPromotionMain data={data.data} />
       </div>
     ))
   }
 
   const responsive = {
     0: { items: 1 },
-    568: { items: 5 },
-    1024: { items: 5 },
+    568: { items: 2 },
+    1024: { items: 3 },
   }
 
   return (
@@ -119,52 +197,50 @@ const PromotionMain = ({ data }) => {
 
       <main className="container">
         <HeaderPage>โปรโมชั่นเสริม THONG LOTTO</HeaderPage>
-        {/* <PositionPromotion>
-          {docPromotionSup.map((data) => (
-            <>
-              <CardPromotionSup data={data.data} />
-            </>
-          ))}
-        </PositionPromotion> */}
-        {/* <OptimizeAliceCarousel
-          mouseTracking
-          autoWidth={true}
-          items={items}
-          responsive={responsive}
-          controlsStrategy="alternate"
-          paddingLeft={160}
-          swipeDelta={40}
-        /> */}
+
         <CssThumb className="thumbs">
-          <div className="btn-prev" onClick={slidePrev}>
+          <PrevButton className="btn-prev" onClick={slidePrevMain}>
             &lang;
-          </div>
+          </PrevButton>
 
           <OptimizeAliceCarousel
-            activeIndex={thumbIndex}
-            autoWidth
+            activeIndex={thumbIndexSup}
+            autoHeight
             disableDotsControls
             disableButtonsControls
-            items={prepare}
+            items={promotionSup}
             mouseTracking={false}
-            onSlideChanged={syncThumbs}
-            touchTracking={!mainAnimation}
+            onSlideChanged={syncThumbsSup}
+            touchTracking={!mainAnimationSup}
             responsive={responsive}
           />
 
-          <div className="btn-next" onClick={slideNext}>
+          <NextButton className="btn-next" onClick={slideNextSup}>
             &rang;
-          </div>
+          </NextButton>
         </CssThumb>
         <HeaderPage>โปรโมชั่นหลัก THONG LOTTO</HeaderPage>
+        <CssThumb className="thumbs">
+          <PrevButton className="btn-prev" onClick={slidePrevMain}>
+            &lang;
+          </PrevButton>
 
-        <PositionPromotion>
-          {docPromotionMain.map((data) => (
-            <>
-              <CardPromotionMain data={data.data} />
-            </>
-          ))}
-        </PositionPromotion>
+          <OptimizeAliceCarousel
+            activeIndex={thumbIndexMain}
+            autoHeight
+            disableDotsControls
+            disableButtonsControls
+            items={promotionSup}
+            mouseTracking={false}
+            onSlideChanged={syncThumbsMain}
+            touchTracking={!mainAnimationMain}
+            responsive={responsive}
+          />
+
+          <NextButton className="btn-next" onClick={slideNextMain}>
+            &rang;
+          </NextButton>
+        </CssThumb>
       </main>
     </Layout>
   )

@@ -7,10 +7,17 @@ const TestStyled = styled.img`
   max-height: 152px;
   max-width: 239px;
   width: 100%;
+  @media (max-width: 767px) {
+    max-height: 46px;
+    max-width: 73px;
+  }
 `
 
 const SizeHeader = styled.header`
   height: 223px;
+  @media (max-width: 767px) {
+    height: 67px;
+  }
 `
 const Font = styled(Link)`
   color: white !important;
@@ -39,6 +46,11 @@ const OptimizeButton = styled.div`
   @media (max-width: 1160px) {
     margin-left: 0;
   }
+  @media (max-width: 767px) {
+    font-size: 8px;
+    line-height: 15px;
+    height: 22px;
+  }
 `
 
 const CustomizeUl = styled.ul`
@@ -49,8 +61,8 @@ const CustomizeUl = styled.ul`
 `
 
 const HambergerOptimize = styled.span`
-align-self: center;
-margin:0 10px;
+  align-self: center;
+  margin: 0 10px;
   display: none;
   font-size: 30px;
   cursor: pointer;
@@ -61,6 +73,7 @@ margin:0 10px;
 
 const ResgisterButton = styled.div`
   display: flex;
+  align-items: center;
 `
 
 export const Header = ({ isHomepage, setNavBar }) => {

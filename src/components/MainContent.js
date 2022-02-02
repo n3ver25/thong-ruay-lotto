@@ -27,6 +27,9 @@ const TitleText = styled.div`
 `
 const DetailText = styled.div`
   p {
+    color: #ffffff;
+
+    font-weight: normal;
     font-size: 30px;
     margin-bottom: 0;
     text-align: center;
@@ -37,22 +40,54 @@ const DetailText = styled.div`
       width: fit-content;
       margin: auto;
     }
+    @media (max-width: 767px) {
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 12px;
+      text-align: center;
+      letter-spacing: -0.015em;
+    }
   }
 `
 
 const SupTitle = styled.div`
   text-align-last: center;
+  font-weight: normal;
+
+  @media (max-width: 767px) {
+    font-size: 8px;
+    line-height: 9px;
+    text-align: center;
+  }
+
+  letter-spacing: -0.015em;
+
+  color: #ffffff;
 `
 const ImageSSL = styled.div`
   width: 264px;
   height: 118px;
   margin: auto;
+  @media (max-width: 767px) {
+    width: 89px;
+    height: 39px;
+  }
 `
 
 const PositionBanker = styled.div``
 
 const BankerTitle = styled.div`
   text-align-last: center;
+  @media (max-width: 767px) {
+    font-size: 7px;
+    line-height: 9px;
+    text-align: center;
+  }
+
+  letter-spacing: -0.015em;
+
+  color: #ffffff;
 `
 
 const ImageBanker = styled.div`
@@ -71,13 +106,13 @@ const ImageOptimize = styled(Img)`
 `
 
 const SizeImage = styled.div`
-  width: 78px;
-  height: 78px;
+  width: 76px;
+  height: 76px;
   @media (max-width: 554px) {
-    .fHMqeJ {
-      width: 26px !important;
-      height: 26px !important;
-    }
+    
+    width: 26px !important;
+    height: 26px !important;
+    
   }
 `
 
