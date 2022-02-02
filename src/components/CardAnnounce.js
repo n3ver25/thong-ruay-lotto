@@ -39,6 +39,8 @@ const PositionFont = styled.div`
     @media (max-width: 767px) {
       font-size: 12px;
       margin-bottom: 5px;
+    line-height: 15px;
+
     }
   }
   p {

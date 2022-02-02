@@ -23,6 +23,11 @@ const Font = styled(Link)`
   font-size: 30px;
   line-height: 35px;
   letter-spacing: -0.015em;
+
+  @media (max-width: 1025px) {
+    font-size: 18px;
+    line-height: 15px;
+  }
 `
 const CustomizeUl = styled.ul`
   width: 300px;
@@ -75,7 +80,7 @@ export const Layout = ({ isHomepage, children, navigation }) => {
               <Font to="/contact">ติดต่อเรา</Font>
             </CustomizeLi>
           </CustomizeUl>
-          <Overlay onClick={()=>setNavBar(false)}/>
+          <Overlay onClick={() => setNavBar(false)} />
         </NavBar>
       )}
 
