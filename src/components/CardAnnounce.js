@@ -1,20 +1,25 @@
-import * as React from 'react'
+import  React,{useState} from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image/withIEPolyfill'
 import { RichText } from 'prismic-reactjs'
 
 const TestStyled = styled.div`
-  display: flex;
+  display: ${props => props.showMore?``:`flex`} ;
   background-color: white;
   margin: 0px 23px 20px 23px;
   align-items: center;
   gap: 12px;
   padding: 20px;
+  ${props => props.showMore?`
+  padding: 6px;`:`
   @media (max-width: 767px) {
     max-height: 155px;
     overflow: hidden;
     padding: 6px;
-  }
+  
+  
+}`};
+  
 `
 
 const ImageStyled = styled.div`
@@ -30,17 +35,18 @@ const ImageOptimize = styled(Img)`
 
 const PositionFont = styled.div`
   margin: 20px 0;
-  @media (max-width: 1025px) {
+  width: fit-content;
+  ${props => props.showMore?`width: 100%;`:`@media (max-width: 1025px) {
     width: 50%;
-  }
+  }`}
+  
   h1 {
     color: #9a0112;
     line-height: 51px;
     @media (max-width: 767px) {
       font-size: 12px;
       margin-bottom: 5px;
-    line-height: 15px;
-
+      line-height: 15px;
     }
   }
   p {
@@ -50,17 +56,34 @@ const PositionFont = styled.div`
     }
   }
 `
-const DedtailText = styled.div`
+const DetailText = styled.div`
+word-wrap: break-word;
+${props => props.showMore?``:`
+@media (max-width: 767px) {
+  max-height: 50px;
+  overflow: hidden;
+  max-width: 186px;
+}`}
+  
+`
+
+const ShowMoreButton = styled.p`
+cursor: pointer;
+  margin-bottom: 0px;
   @media (max-width: 767px) {
-    max-height: 50px;
-    overflow: hidden;
-    max-width: 186px;
-  }
+    font-size: 10px;
+  
+}
 `
 
 export const CardAnnounce = ({ data }) => {
+  const [showMore,setShowMore] = useState(false)
+
+  const showMoreFunc = () =>(
+    setShowMore(!showMore)
+  )
   return (
-    <TestStyled>
+    <TestStyled showMore={showMore}>
       <ImageStyled>
         <ImageOptimize
           fluid={data?.data?.image_announce?.fluid}
@@ -68,9 +91,14 @@ export const CardAnnounce = ({ data }) => {
           objectPosition="50% 50%"
         />
       </ImageStyled>
-      <PositionFont>
+      <PositionFont showMore={showMore}>
         {RichText.render(data.data.text_title.raw)}
-        <DedtailText>{RichText.asText(data.data.text_detail.raw)}</DedtailText>
+        <DetailText showMore={showMore}>{RichText.asText(data.data.text_detail.raw)}</DetailText>
+{showMore?
+       <ShowMoreButton onClick={()=> showMoreFunc()}> แสดงน้อยลง... </ShowMoreButton>:
+       <ShowMoreButton onClick={()=> showMoreFunc()}> อ่านเพิ่มเติม... </ShowMoreButton>
+
+}
       </PositionFont>
     </TestStyled>
   )

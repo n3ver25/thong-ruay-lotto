@@ -8,10 +8,6 @@ import styled from 'styled-components'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
 
-const PositionPromotion = styled.div`
-  display: flex;
-  place-content: center;
-`
 const HeaderPage = styled.div`
   height: 96px;
   background: #c4c4c4;
@@ -81,14 +77,14 @@ const PromotionMain = ({ data }) => {
   const docPromotionSup = data.allPrismicPromotionSup.nodes
 
   const [promotionSup, setPromotionSup] = useState([])
-  const [mainIndexSup, setMainIndexSup] = useState(0)
-  const [mainAnimationSup, setMainAnimationSup] = useState(false)
+  const [, setMainIndexSup] = useState(0)
+  const [mainAnimationSup] = useState(false)
   const [thumbIndexSup, setThumbIndexSup] = useState(0)
   const [thumbAnimationSup, setThumbAnimationSup] = useState(false)
 
-  const [promotionMain, setPromotionMain] = useState([])
-  const [mainIndexMain, setMainIndexMain] = useState(0)
-  const [mainAnimationMain, setMainAnimationMain] = useState(false)
+  const [promotionMain,setPromotionMain] = useState([])
+  const [, setMainIndexMain] = useState(0)
+  const [mainAnimationMain] = useState(false)
   const [thumbIndexMain, setThumbIndexMain] = useState(0)
   const [thumbAnimationMain, setThumbAnimationMain] = useState(false)
 
@@ -158,7 +154,7 @@ const PromotionMain = ({ data }) => {
       setThumbIndexSup,
       setThumbAnimationSup,
     ])
-    setPromotionSup(thumbFuncMain)
+    setPromotionMain(thumbFuncMain)
   }, [])
 
   const thumbItemsSup = (items, [setThumbIndexSup, setThumbAnimationSup]) => {
@@ -199,7 +195,7 @@ const PromotionMain = ({ data }) => {
         <HeaderPage>โปรโมชั่นเสริม THONG LOTTO</HeaderPage>
 
         <CssThumb className="thumbs">
-          <PrevButton className="btn-prev" onClick={slidePrevMain}>
+          <PrevButton className="btn-prev" onClick={slidePrevSup}>
             &lang;
           </PrevButton>
 
@@ -230,7 +226,7 @@ const PromotionMain = ({ data }) => {
             autoHeight
             disableDotsControls
             disableButtonsControls
-            items={promotionSup}
+            items={promotionMain}
             mouseTracking={false}
             onSlideChanged={syncThumbsMain}
             touchTracking={!mainAnimationMain}

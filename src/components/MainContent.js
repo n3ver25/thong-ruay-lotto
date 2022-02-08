@@ -2,7 +2,6 @@ import * as React from 'react'
 import { RichText } from 'prismic-reactjs'
 import styled from 'styled-components'
 import Img from 'gatsby-image/withIEPolyfill'
-import { Lotto } from './Lotto'
 
 const Position = styled.div`
   width: 100%;
@@ -34,6 +33,9 @@ const DetailText = styled.div`
     margin-bottom: 5px;
     text-align: center;
     letter-spacing: -0.015em;
+    @media (max-width: 1441px) {
+      font-size: 25px;
+    }
     @media (max-width: 1025px) {
       font-size: 18px;
       line-height: 21px;
@@ -109,10 +111,8 @@ const SizeImage = styled.div`
   width: 76px;
   height: 76px;
   @media (max-width: 554px) {
-    
     width: 26px !important;
     height: 26px !important;
-    
   }
 `
 
@@ -125,7 +125,6 @@ export const MainContent = ({ doc }) => {
         <DetailText>{RichText.render(doc?.detail_banner?.raw)}</DetailText>
       </Position>
 
-      <div>{/* <Lotto /> */}</div>
       <SupTitle>
         เว็บหวยออนไลน์ ทองลอตโต้ (thong lotto) มีการเข้ารหัสข้อมูล 256 บิต
         ข้อมูลของท่านมีความปลอดภัย 100%

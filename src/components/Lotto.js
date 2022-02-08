@@ -1,7 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 
 export const Lotto = () => {
- 
   return (
     <>
       <div>Test</div>

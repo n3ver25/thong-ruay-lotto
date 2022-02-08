@@ -73,7 +73,7 @@ const Homepage = ({ data }) => {
 
   useEffect(() => {
     if (!data) return null
-  }, [])
+  })
 
   return (
     <Layout isHomepage>

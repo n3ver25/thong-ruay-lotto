@@ -42,7 +42,7 @@ const Rules = ({ data }) => {
       />
 
       <main className="container">
-      <HeaderPage>กติกา THONG LOTTO</HeaderPage>
+        <HeaderPage>กติกา THONG LOTTO</HeaderPage>
         <PositionCard>
           {doc.map((data) => (
             <>

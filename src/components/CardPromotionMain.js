@@ -10,7 +10,6 @@ const TestStyled = styled.div`
   max-width: 372px;
 `
 
-
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 372px;

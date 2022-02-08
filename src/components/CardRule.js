@@ -14,13 +14,30 @@ const TestStyled = styled.div`
   @media (max-width: 767px) {
     height: 216px;
   }
+  
 `
+const Behind = styled.div`
+display: none;
+background: red;
+height :300px;
+width: 300px;
+`
+
+const Card = styled.div`
+:hover{
+  opacity: 0;
+  ${Behind}{
+    display:block;
+  }
+}
+`
+
 
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 417px;
   height: 330px;
-
+  
   @media (max-width: 1025px) {
     height: 316px;
   }
@@ -35,10 +52,10 @@ const ImageOptimize = styled(Img)`
 `
 
 const OptimizeFont = styled.div`
-@media (max-width: 767px) {
-  max-width: 140px;
-  overflow: hidden;
-}
+  @media (max-width: 767px) {
+    max-width: 140px;
+    overflow: hidden;
+  }
   h1 {
     font-style: normal;
     font-weight: normal;
@@ -68,6 +85,7 @@ const OptimizeFont = styled.div`
 export const CardRule = ({ data }) => {
   return (
     <TestStyled>
+      <Card>
       <ImageStyled>
         <ImageOptimize
           fluid={data?.rules_image?.fluid}
@@ -79,6 +97,10 @@ export const CardRule = ({ data }) => {
         {RichText.render(data.rules_title.raw)}
         {RichText.asText(data.rules_detail.raw)}
       </OptimizeFont>
+      </Card>
+     <Behind>
+       Test
+     </Behind>
     </TestStyled>
   )
 }

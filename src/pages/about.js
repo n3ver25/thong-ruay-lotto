@@ -26,7 +26,7 @@ const CardIcon = styled.div`
   width: 208px;
   height: 208px;
   margin: 20px auto;
-  @media(max-width: 1025px){
+  @media (max-width: 1025px) {
     width: 120px;
     height: 120px;
   }
@@ -36,7 +36,7 @@ const TitlePage = styled.div`
   background: #bf0015;
   text-align: center;
   padding: 53px;
-  @media(max-width: 1025px){
+  @media (max-width: 1025px) {
     padding: 15px;
   }
   h1 {
@@ -46,7 +46,7 @@ const TitlePage = styled.div`
     letter-spacing: -0.015em;
 
     color: #ffffff;
-    @media(max-width: 1025px){
+    @media (max-width: 1025px) {
       font-size: 20px;
     }
   }
@@ -58,7 +58,7 @@ const TitlePage = styled.div`
 
     color: #ffffff;
     margin-bottom: 0;
-    @media(max-width: 1025px){
+    @media (max-width: 1025px) {
       font-size: 14px;
     }
   }
@@ -77,7 +77,7 @@ const ServiceFont = styled.div`
     letter-spacing: -0.015em;
 
     color: #000000;
-    @media(max-width: 1025px){
+    @media (max-width: 1025px) {
       font-size: 18px;
     }
   }
@@ -88,7 +88,7 @@ const ServiceFont = styled.div`
     letter-spacing: -0.015em;
 
     color: #000000;
-    @media(max-width: 1025px){
+    @media (max-width: 1025px) {
       font-size: 18px;
     }
   }
@@ -102,7 +102,7 @@ const IconTask = styled.div`
     letter-spacing: -0.015em;
     font-weight: bold;
     margin-bottom: 20px;
-    @media(max-width: 1025px){
+    @media (max-width: 1025px) {
       font-size: 14px;
     }
   }
@@ -113,7 +113,7 @@ const IconTask = styled.div`
     letter-spacing: -0.015em;
     margin-bottom: 0;
 
-    @media(max-width: 1025px){
+    @media (max-width: 1025px) {
       font-size: 14px;
     }
   }
@@ -156,7 +156,7 @@ const About = ({ data }) => {
         </Service>
 
         <ImagePosition>
-          <ImageOptimize fluid={doc?.about_image?.fluid} objectFit="contain"  />
+          <ImageOptimize fluid={doc?.about_image?.fluid} objectFit="contain" />
         </ImagePosition>
       </main>
     </Layout>

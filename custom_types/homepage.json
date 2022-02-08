@@ -1,72 +1,72 @@
 {
-  "Main" : {
-    "text_banner" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "label" : "text_banner"
+  "Main": {
+    "text_banner": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "text_banner"
       }
     },
-    "text_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1,heading2,heading3,heading4,heading5,heading6",
-        "label" : "text_title"
+    "text_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1,heading2,heading3,heading4,heading5,heading6",
+        "label": "text_title"
       }
     },
-    "detail_banner" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
-        "label" : "text_detail"
+    "detail_banner": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph,preformatted,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,image,embed,list-item,o-list-item,rtl",
+        "label": "text_detail"
       }
     },
-    "image_ssl" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "image_ssl"
+    "image_ssl": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "image_ssl"
       }
     },
-    "body" : {
-      "type" : "Slices",
-      "fieldset" : "Slice zone",
-      "config" : {
-        "labels" : null,
-        "choices" : {
-          "image_banner" : {
-            "type" : "Slice",
-            "fieldset" : "image_banner",
-            "description" : "image banner",
-            "icon" : "add_to_photos",
-            "display" : "list",
-            "non-repeat" : { },
-            "repeat" : {
-              "banner_image" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : { },
-                  "thumbnails" : [ ],
-                  "label" : "banner_image"
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": null,
+        "choices": {
+          "image_banner": {
+            "type": "Slice",
+            "fieldset": "image_banner",
+            "description": "image banner",
+            "icon": "add_to_photos",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "banner_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "banner_image"
                 }
               }
             }
           },
-          "image_bank" : {
-            "type" : "Slice",
-            "fieldset" : "image_bank",
-            "description" : "image bank",
-            "icon" : "account_balance",
-            "display" : "list",
-            "non-repeat" : { },
-            "repeat" : {
-              "image_banker" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : { },
-                  "thumbnails" : [ ],
-                  "label" : "image_banker"
+          "image_bank": {
+            "type": "Slice",
+            "fieldset": "image_bank",
+            "description": "image bank",
+            "icon": "account_balance",
+            "display": "list",
+            "non-repeat": {},
+            "repeat": {
+              "image_banker": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "image_banker"
                 }
               }
             }

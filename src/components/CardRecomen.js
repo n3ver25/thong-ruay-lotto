@@ -1,15 +1,11 @@
 import * as React from 'react'
-import styled from 'styled-components';
-import { RichText } from 'prismic-reactjs';
+import styled from 'styled-components'
+import { RichText } from 'prismic-reactjs'
 
 const TestStyled = styled.div`
-width: 100%;
+  width: 100%;
 `
 
 export const CardRecomen = ({ data }) => {
-    return (
-        <TestStyled>
-            {RichText.asText(data.data.text_title.raw)}
-        </TestStyled>
-    )
+  return <TestStyled>{RichText.asText(data.data.text_title.raw)}</TestStyled>
 }
