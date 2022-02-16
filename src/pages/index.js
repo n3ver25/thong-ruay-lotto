@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { HomepageBanner } from '../components/HomepageBanner'
@@ -70,20 +70,30 @@ const TextBanner = styled.div`
 
 const Homepage = ({ data }) => {
   const doc = data.prismicHomepage.data
+  const [load, setLoad] = useState(true)
+
+ 
 
   useEffect(() => {
     if (!data) return null
-  })
+    setTimeout(() => {
+      setLoad(false)
+    }, 1000)
+  }, [])
 
   return (
     <Layout isHomepage>
       <Seo title="Home" />
       <main className="container">
-        <TextBanner>
-          <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
-        </TextBanner>
-        <HomepageBanner doc={doc} />
-        <MainContent doc={doc} />
+        {!load && (
+          <>
+            <TextBanner>
+              <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
+            </TextBanner>
+            <HomepageBanner doc={doc} />
+            <MainContent doc={doc} />
+          </>
+        )}
       </main>
     </Layout>
   )

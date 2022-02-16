@@ -1,20 +1,30 @@
-import * as React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image/withIEPolyfill'
 import { RichText } from 'prismic-reactjs'
+import Modal from 'react-modal/lib/components/Modal'
 
 const TestStyled = styled.div`
-cursor: pointer;
   width: 100%;
   background: white;
-  margin: 3px;
+  cursor: pointer;
   max-width: 372px;
+  @media (max-width: 1025px) {
+    max-height: 372px;
+  }
 `
 
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 372px;
   height: 510px;
+  @media (max-width: 1025px) {
+    height: 385px;
+  }
+
+  @media (max-width: 1025px) {
+    height: 220px;
+  }
 `
 
 const ImageOptimize = styled(Img)`
@@ -29,6 +39,17 @@ const TextPromotionSup = styled.div`
   }
 `
 
+const ButtonClose = styled.div`
+  text-align: end;
+`
+const ButtonCss = styled.button`
+  width: 88px;
+  height: 37px;
+  background: #bf0015;
+  border: none;
+  color: white;
+`
+
 const TextTitle = styled.div`
   h1 {
     font-size: 24px;
@@ -38,21 +59,87 @@ const TextTitle = styled.div`
     color: #9a0112;
   }
 `
+const TextDetail = styled.div`
+  p {
+    margin-bottom: 0;
+  }
+`
+const CustomizeCard = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 45px;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+`
+const TextPosition = styled.div`
+  align-self: center;
+`
+
+const customStyles = {
+  content: {
+    top: '50%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+  },
+}
 
 export const CardPromotionMain = ({ data }) => {
+  const [modalIsOpen, setIsOpen] = useState(false)
+
+  const openModal = () => {
+    setIsOpen(true)
+  }
+  const closeModal = () => {
+    setIsOpen(false)
+  }
   return (
-    <TestStyled>
-      <ImageStyled>
-        <ImageOptimize
-          fluid={data?.promotion_image?.fluid}
-          objectFit="cover"
-          objectPosition="50% 50%"
-        />
-      </ImageStyled>
-      <TextPromotionSup>
-        <TextTitle>{RichText.render(data.promiotion_title.raw)}</TextTitle>
-        {RichText.render(data.promotion_main_detail.raw)}
-      </TextPromotionSup>
-    </TestStyled>
+    <>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        style={customStyles}
+        contentLabel="Example Modal"
+      >
+        <CustomizeCard>
+          <ImageStyled>
+            <ImageOptimize
+              fluid={data?.promotion_image?.fluid}
+              objectFit="contain"
+              objectPosition="50% 50%"
+            />
+          </ImageStyled>
+          <TextPosition>
+            <TextTitle>{RichText.render(data.promiotion_title.raw)}</TextTitle>
+            <TextDetail>
+              {RichText.render(data.promotion_main_detail.raw)}
+            </TextDetail>
+            <ButtonClose>
+              <ButtonCss onClick={closeModal}>ปิด</ButtonCss>
+            </ButtonClose>
+          </TextPosition>
+        </CustomizeCard>
+      </Modal>
+      <TestStyled
+        onClick={() => {
+          openModal()
+        }}
+      >
+        <ImageStyled>
+          <ImageOptimize
+            fluid={data?.promotion_image?.fluid}
+            objectFit="cover"
+            objectPosition="50% 50%"
+          />
+        </ImageStyled>
+        <TextPromotionSup>
+          <TextTitle>{RichText.render(data.promiotion_title.raw)}</TextTitle>
+          {RichText.render(data.promotion_main_detail.raw)}
+        </TextPromotionSup>
+      </TestStyled>
+    </>
   )
 }

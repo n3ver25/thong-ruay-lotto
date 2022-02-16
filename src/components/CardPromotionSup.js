@@ -42,6 +42,13 @@ const TextPromotionSup = styled.div`
 const ButtonClose = styled.div`
   text-align: end;
 `
+const ButtonCss = styled.button`
+  width: 88px;
+  height: 37px;
+  background: #bf0015;
+  border: none;
+  color: white;
+`
 
 const TextTitle = styled.div`
   h1 {
@@ -61,7 +68,7 @@ const CustomizeCard = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 45px;
-  @media(max-width: 767px){
+  @media (max-width: 767px) {
     grid-template-columns: 1fr;
   }
 `
@@ -114,7 +121,7 @@ export const CardPromotionSup = ({ data }) => {
               {RichText.render(data.promotion_sup_detail.raw)}
             </TextDetail>
             <ButtonClose>
-              <button onClick={closeModal}>close</button>
+              <ButtonCss onClick={closeModal}>ปิด</ButtonCss>
             </ButtonClose>
           </TextPosition>
         </CustomizeCard>
