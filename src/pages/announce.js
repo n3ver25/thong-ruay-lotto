@@ -42,11 +42,12 @@ const TableData = styled.div`
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  cursor: pointer;
 `
 
 const HeaderPage = styled.div`
   height: 96px;
-  background: #c4c4c4;
+  background: #FFC300;
   margin: 20px 0;
   text-align: center;
   font-size: 36px;

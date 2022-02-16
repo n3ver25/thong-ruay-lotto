@@ -4,6 +4,7 @@ import { RichText } from 'prismic-reactjs'
 
 const TestStyled = styled.div`
   width: 100%;
+  cursor: pointer;
 `
 
 export const CardRecomen = ({ data }) => {

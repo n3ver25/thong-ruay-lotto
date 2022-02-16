@@ -17,7 +17,7 @@ export const HomepageBanner = ({ doc }) => {
   const slider = (
     <AwesomeSlider>
       <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} />
-      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} />
+      <div data-src={doc?.body[0]?.items[1]?.banner_image?.fluid?.src} />
     </AwesomeSlider>
   )
   return <ImageSize>{slider}</ImageSize>

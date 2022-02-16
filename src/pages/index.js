@@ -28,7 +28,7 @@ const Text = styled.div`
   white-space: pre;
 
   p {
-    font-family: Roboto;
+    font-family: Prompt;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;

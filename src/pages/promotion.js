@@ -10,7 +10,7 @@ import 'react-alice-carousel/lib/alice-carousel.css'
 
 const HeaderPage = styled.div`
   height: 96px;
-  background: #c4c4c4;
+  background: #ffc300;
   margin: 20px 0;
   text-align: center;
   font-size: 36px;
@@ -54,9 +54,7 @@ const OptimizeAliceCarousel = styled(AliceCarousel)`
 
 const CssThumb = styled.div`
   display: flex;
-  .thumbs {
-    width: fit-content;
-  }
+  width: 80vw;
 `
 
 const PrevButton = styled.div`
@@ -64,12 +62,24 @@ const PrevButton = styled.div`
   font-size: 165px;
   cursor: pointer;
   margin-right: 15px;
+  @media (max-width: 1025px) {
+    font-size: 55px;
+  }
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
 `
 
 const NextButton = styled.div`
   align-self: center;
   font-size: 165px;
   cursor: pointer;
+  @media (max-width: 1025px) {
+    font-size: 55px;
+  }
+  @media (max-width: 767px) {
+    font-size: 35px;
+  }
 `
 
 const PromotionMain = ({ data }) => {
@@ -82,7 +92,7 @@ const PromotionMain = ({ data }) => {
   const [thumbIndexSup, setThumbIndexSup] = useState(0)
   const [thumbAnimationSup, setThumbAnimationSup] = useState(false)
 
-  const [promotionMain,setPromotionMain] = useState([])
+  const [promotionMain, setPromotionMain] = useState([])
   const [, setMainIndexMain] = useState(0)
   const [mainAnimationMain] = useState(false)
   const [thumbIndexMain, setThumbIndexMain] = useState(0)

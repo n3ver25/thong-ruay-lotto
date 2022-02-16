@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Prompt');
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -17,7 +17,7 @@
  */
 body {
   color: #72767b;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Prompt', sans-serif;
   font-size: 16px;
   font-weight: 400;
   letter-spacing: 0.4;
@@ -48,11 +48,11 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Prompt', sans-serif;
 }
 
 h1 {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Prompt', sans-serif;
   font-size: 42px;
   font-weight: normal;
   color: #484d52;

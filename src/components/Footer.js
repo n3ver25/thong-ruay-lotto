@@ -2,7 +2,7 @@ import * as React from 'react'
 export const Footer = () => (
   <footer>
     <p>
-      สนใจสอบถามรายละเอียดที่และขอรับโบนัชต่างๆได้ที่
+      สนใจสอบถามรายละเอียดที่และขอรับโบนัสต่างๆได้ที่
       <br />
       Line: @thongruay ตลอด 24 ชม.
       <br />

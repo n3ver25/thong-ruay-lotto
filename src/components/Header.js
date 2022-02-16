@@ -6,6 +6,7 @@ import styled from 'styled-components'
 const TestStyled = styled.img`
   max-height: 152px;
   max-width: 239px;
+  cursor: pointer;
   width: 100%;
   @media (max-width: 767px) {
     max-height: 46px;
@@ -52,13 +53,15 @@ const HambergerOptimize = styled.span`
 
 const ResgisterButton = styled.div`
   display: grid;
+  margin-left: 40px;
   grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+  grid-gap: 10px;
   align-items: center;
 `
 
 const OptimizeButtonRegister = styled.button`
   border: none;
+  cursor: pointer;
   max-width: 115px;
   height: 53px;
   padding: 0 5px;
@@ -90,8 +93,8 @@ const OptimizeButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 40px;
   color: white;
+  cursor: pointer;
   @media (max-width: 1160px) {
     margin-left: 0;
   }
@@ -100,6 +103,10 @@ const OptimizeButton = styled.button`
     line-height: 15px;
     height: 22px;
   }
+`
+
+const PositionButton = styled.div`
+  display: flex;
 `
 
 export const Header = ({ isHomepage, setNavBar }) => {
@@ -138,18 +145,20 @@ export const Header = ({ isHomepage, setNavBar }) => {
             </li>
           </CustomizeUl>
         </nav>
-        <ResgisterButton>
-          <a href="https://www.thonglotto.com/">
-            <OptimizeButton> เข้าสู่ระบบ</OptimizeButton>
-          </a>
-          <a href="https://www.thonglotto.com/member/c13699">
-            <OptimizeButtonRegister>สมัครสมาชิก</OptimizeButtonRegister>
-          </a>
+        <PositionButton>
+          <ResgisterButton>
+            <a href="https://www.thonglotto.com/">
+              <OptimizeButton> เข้าสู่ระบบ</OptimizeButton>
+            </a>
+            <a href="https://www.thonglotto.com/member/c13699">
+              <OptimizeButtonRegister>สมัครสมาชิก</OptimizeButtonRegister>
+            </a>
+          </ResgisterButton>
 
           <HambergerOptimize onClick={() => setNavBar(true)}>
             &#9776;
           </HambergerOptimize>
-        </ResgisterButton>
+        </PositionButton>
       </Page>
     </SizeHeader>
   )

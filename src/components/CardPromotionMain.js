@@ -4,6 +4,7 @@ import Img from 'gatsby-image/withIEPolyfill'
 import { RichText } from 'prismic-reactjs'
 
 const TestStyled = styled.div`
+cursor: pointer;
   width: 100%;
   background: white;
   margin: 3px;

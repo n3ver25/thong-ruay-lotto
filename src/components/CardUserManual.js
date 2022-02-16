@@ -5,6 +5,7 @@ import { RichText } from 'prismic-reactjs'
 import Modal from 'react-modal/lib/components/Modal'
 
 const TestStyled = styled.div`
+cursor: pointer;
   width: 100%;
   display: flex;
   margin: 10px auto;

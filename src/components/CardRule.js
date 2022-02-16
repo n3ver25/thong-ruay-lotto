@@ -4,6 +4,8 @@ import Img from 'gatsby-image/withIEPolyfill'
 import { RichText } from 'prismic-reactjs'
 
 const TestStyled = styled.div`
+  cursor: pointer;
+  position: relative;
   width: 100%;
   background: white;
   max-width: fit-content;
@@ -14,30 +16,22 @@ const TestStyled = styled.div`
   @media (max-width: 767px) {
     height: 216px;
   }
-  
 `
+
 const Behind = styled.div`
-display: none;
-background: red;
-height :300px;
-width: 300px;
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  padding: 5%;
 `
-
-const Card = styled.div`
-:hover{
-  opacity: 0;
-  ${Behind}{
-    display:block;
-  }
-}
-`
-
-
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 417px;
   height: 330px;
-  
+
   @media (max-width: 1025px) {
     height: 316px;
   }
@@ -72,6 +66,7 @@ const OptimizeFont = styled.div`
       color: #9a0112;
     }
   }
+  overflow: hidden;
   font-size: 18px;
   line-height: 28px;
   margin-bottom: 0;
@@ -82,25 +77,42 @@ const OptimizeFont = styled.div`
   }
 `
 
+const Card = styled.div`
+  &:hover {
+    ${Behind} {
+      display: block;
+    }
+    ${ImageStyled} {
+      opacity: 0;
+    }
+    ${OptimizeFont} {
+      opacity: 0;
+    }
+  }
+`
+
 export const CardRule = ({ data }) => {
   return (
     <TestStyled>
       <Card>
-      <ImageStyled>
-        <ImageOptimize
-          fluid={data?.rules_image?.fluid}
-          objectFit="contain"
-          objectPosition="50% 50%"
-        />
-      </ImageStyled>
-      <OptimizeFont>
-        {RichText.render(data.rules_title.raw)}
-        {RichText.asText(data.rules_detail.raw)}
-      </OptimizeFont>
+        <ImageStyled>
+          <ImageOptimize
+            fluid={data?.rules_image?.fluid}
+            objectFit="contain"
+            objectPosition="50% 50%"
+          />
+        </ImageStyled>
+        <OptimizeFont>
+          {RichText.render(data.rules_title.raw)}
+          {RichText.asText(data.rules_detail.raw)}
+        </OptimizeFont>
+        <Behind>
+          <div>
+            {RichText.render(data.rules_title.raw)}
+            {RichText.asText(data.rules_detail.raw)}
+          </div>
+        </Behind>
       </Card>
-     <Behind>
-       Test
-     </Behind>
     </TestStyled>
   )
 }
