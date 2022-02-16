@@ -3,11 +3,14 @@ import * as React from 'react'
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import styled from 'styled-components'
+import Img from 'gatsby-image/withIEPolyfill'
 
 const ImageSize = styled.div`
   max-width: 1232px;
   margin: 50px auto;
-
+  .awssld__content > img, .awssld__content > video {
+    object-fit: contain !important;
+  }
   @media (max-width: 767px) {
     margin: 8px auto;
   }

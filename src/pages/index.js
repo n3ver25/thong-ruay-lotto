@@ -109,7 +109,7 @@ export const query = graphql`
             id
             items {
               banner_image {
-                fluid {
+                fluid(maxWidth: 1232) {
                   src
                 }
               }
