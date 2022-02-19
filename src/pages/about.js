@@ -15,6 +15,9 @@ const IconPosition = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
 `
 
 const ImagePosition = styled.div`
@@ -154,10 +157,6 @@ const About = ({ data }) => {
             ))}
           </IconPosition>
         </Service>
-
-        <ImagePosition>
-          <ImageOptimize fluid={doc?.about_image?.fluid} objectFit="contain" />
-        </ImagePosition>
       </main>
     </Layout>
   )

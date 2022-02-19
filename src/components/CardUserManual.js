@@ -5,7 +5,7 @@ import { RichText } from 'prismic-reactjs'
 import Modal from 'react-modal/lib/components/Modal'
 
 const TestStyled = styled.div`
-cursor: pointer;
+  cursor: pointer;
   width: 100%;
   display: flex;
   margin: 10px auto;
@@ -27,7 +27,7 @@ const ImageStyled = styled.div`
 const ImageStyledDialog = styled.div`
   width: 100%;
   height: 270px;
-  
+
   max-height: 300px;
 `
 
@@ -77,8 +77,8 @@ const OptimizeFont = styled.div`
 `
 
 const OptimizeFontAdapt = styled(OptimizeFont)`
-width: 100%;
-max-width: -webkit-fill-available;
+  width: 100%;
+  max-width: -webkit-fill-available;
 `
 
 const PositionButton = styled.div`
@@ -105,14 +105,14 @@ const OptimizeButton = styled.button`
   }
 `
 const SizeDialog = styled.div`
-max-width: 1000px;
+  max-width: 1000px;
 `
 const ButtonClose = styled.button`
-width: 88px;
-height: 37px;
-background: #BF0015;
-border:none;
-color: white;
+  width: 88px;
+  height: 37px;
+  background: #bf0015;
+  border: none;
+  color: white;
 `
 
 const DetailBox = styled.div`
@@ -124,11 +124,20 @@ const DetailBox = styled.div`
 `
 
 const PositionClose = styled.div`
-display: flex;
-    justify-content: flex-end;
-    padding: 0 60px;
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 60px;
 `
-
+const FontDetail = styled.div`
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+`
 const customStyles = {
   content: {
     top: '50%',
@@ -151,56 +160,56 @@ export const CardUserManual = ({ data }) => {
   }
   return (
     <>
-     <Modal
+      <Modal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
         style={customStyles}
         contentLabel="Example Modal"
       >
         <SizeDialog>
-        <ImageStyledDialog>
+          <ImageStyledDialog>
+            <ImageOptimize
+              fluid={data?.manual_user_image?.fluid}
+              objectFit="contain"
+              objectPosition="50% 50%"
+            />
+          </ImageStyledDialog>
+          <OptimizeFontAdapt>
+            {RichText.render(data.manual_user_title.raw)}
+            <FontDetail>
+              <p>{RichText.asText(data.manual_user_detail.raw)}</p>
+            </FontDetail>
+          </OptimizeFontAdapt>
+
+          <PositionClose>
+            <ButtonClose onClick={closeModal}>ปิด</ButtonClose>
+          </PositionClose>
+        </SizeDialog>
+      </Modal>
+      <TestStyled>
+        <ImageStyled>
           <ImageOptimize
             fluid={data?.manual_user_image?.fluid}
             objectFit="contain"
             objectPosition="50% 50%"
           />
-        </ImageStyledDialog>
-        <OptimizeFontAdapt>
-        {RichText.render(data.manual_user_title.raw)}
-                 <div>
-          <p>{RichText.asText(data.manual_user_detail.raw)}</p>
-        </div>
-
-        </OptimizeFontAdapt>
-                
-           <PositionClose>
-          <ButtonClose onClick={closeModal}>ปิด</ButtonClose>
-          </PositionClose>
-        </SizeDialog>
-      </Modal>
-      <TestStyled>
-      <ImageStyled>
-        <ImageOptimize
-          fluid={data?.manual_user_image?.fluid}
-          objectFit="contain"
-          objectPosition="50% 50%"
-        />
-      </ImageStyled>
-      <OptimizeFont>
-        {RichText.render(data.manual_user_title.raw)}
-        <DetailBox>
-          <p>{RichText.asText(data.manual_user_detail.raw)}</p>
-        </DetailBox>
-        <PositionButton>
-          <OptimizeButton  
-          onClick={() => {
-          openModal()
-        }}>
-          ข้อมูลเพิ่มเติม</OptimizeButton>
-        </PositionButton>
-      </OptimizeFont>
-    </TestStyled>
+        </ImageStyled>
+        <OptimizeFont>
+          {RichText.render(data.manual_user_title.raw)}
+          <DetailBox>
+            <p>{RichText.asText(data.manual_user_detail.raw)}</p>
+          </DetailBox>
+          <PositionButton>
+            <OptimizeButton
+              onClick={() => {
+                openModal()
+              }}
+            >
+              ข้อมูลเพิ่มเติม
+            </OptimizeButton>
+          </PositionButton>
+        </OptimizeFont>
+      </TestStyled>
     </>
-   
   )
 }

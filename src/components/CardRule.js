@@ -6,10 +6,11 @@ import { RichText } from 'prismic-reactjs'
 const TestStyled = styled.div`
   cursor: pointer;
   position: relative;
+  overflow: hidden;
   width: 100%;
   background: white;
-  max-width: fit-content;
-  padding: 10px;
+  max-width: 553px;
+  padding: 20px;
   @media (max-width: 1025px) {
     height: 493px;
   }
@@ -25,11 +26,39 @@ const Behind = styled.div`
   position: absolute;
   z-index: 1;
   top: 0;
-  padding: 5%;
+  padding-top: 5%;
+  @media (max-width: 767px) {
+    max-width: 140px;
+    overflow: hidden;
+  }
+  h1 {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.015em;
+
+    color: #9a0112;
+    @media (max-width: 767px) {
+      font-size: 9px;
+      line-height: 11px;
+      letter-spacing: -0.015em;
+
+      color: #9a0112;
+    }
+  }
+  overflow: hidden;
+  font-size: 18px;
+  line-height: 28px;
+  margin-bottom: 0;
+  @media (max-width: 767px) {
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: -0.015em;
+  }
 `
 const ImageStyled = styled.div`
   width: 100%;
-  max-width: 417px;
   height: 330px;
 
   @media (max-width: 1025px) {
@@ -75,9 +104,12 @@ const OptimizeFont = styled.div`
     line-height: 11px;
     letter-spacing: -0.015em;
   }
+  height: 150px;
 `
 
 const Card = styled.div`
+  position: relative;
+
   &:hover {
     ${Behind} {
       display: block;
@@ -90,7 +122,14 @@ const Card = styled.div`
     }
   }
 `
-
+const DetailFont = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+`
 export const CardRule = ({ data }) => {
   return (
     <TestStyled>
@@ -104,7 +143,7 @@ export const CardRule = ({ data }) => {
         </ImageStyled>
         <OptimizeFont>
           {RichText.render(data.rules_title.raw)}
-          {RichText.asText(data.rules_detail.raw)}
+          <DetailFont>{RichText.asText(data.rules_detail.raw)}</DetailFont>
         </OptimizeFont>
         <Behind>
           <div>
