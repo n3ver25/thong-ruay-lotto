@@ -3,7 +3,6 @@ import * as React from 'react'
 import AwesomeSlider from 'react-awesome-slider'
 import 'react-awesome-slider/dist/styles.css'
 import styled from 'styled-components'
-import Img from 'gatsby-image/withIEPolyfill'
 
 const ImageSize = styled.div`
   max-width: 1232px;

@@ -79,7 +79,7 @@ const Homepage = ({ data }) => {
     setTimeout(() => {
       setLoad(false)
     }, 1000)
-  }, [])
+  })
 
   return (
     <Layout isHomepage>

@@ -19,12 +19,6 @@ const IconPosition = styled.div`
     grid-template-columns: 1fr;
   }
 `
-
-const ImagePosition = styled.div`
-  width: 100%;
-  height: 423px;
-`
-
 const CardIcon = styled.div`
   width: 208px;
   height: 208px;

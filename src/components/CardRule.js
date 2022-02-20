@@ -13,9 +13,6 @@ const TestStyled = styled.div`
   @media (max-width: 1025px) {
     padding: 10px;
   }
-  @media (max-width: 767px) {
-    padding: 3px;
-  }
 `
 
 const Behind = styled.div`

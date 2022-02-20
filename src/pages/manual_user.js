@@ -3,6 +3,36 @@ import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
 import { graphql } from 'gatsby'
 import { CardUserManual } from '../components/CardUserManual'
+import styled from 'styled-components'
+
+const HeaderPage = styled.div`
+  height: 96px;
+  background: #ffc300;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  letter-spacing: -0.015em;
+
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 1025px) {
+    height: 56px;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 21px;
+    text-align: center;
+    letter-spacing: -0.015em;
+
+    color: #000000;
+  }
+`
 
 const ManualUser = ({ data }) => {
   const doc = data.allPrismicManualUser.nodes
@@ -15,6 +45,7 @@ const ManualUser = ({ data }) => {
       />
 
       <main className="container">
+      <HeaderPage>คู่มือการใช้งาน THONG LOTTO</HeaderPage>
         <div>
           {doc.map((data) => (
             <>

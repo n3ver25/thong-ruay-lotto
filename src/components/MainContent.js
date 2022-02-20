@@ -130,7 +130,7 @@ export const MainContent = ({ doc }) => {
         ข้อมูลของท่านมีความปลอดภัย 100%
       </SupTitle>
       <ImageSSL>
-        <img src={doc?.image_ssl?.fluid?.src} />
+        <img src={doc?.image_ssl?.fluid.src} />
       </ImageSSL>
       <PositionBanker>
         <BankerTitle>

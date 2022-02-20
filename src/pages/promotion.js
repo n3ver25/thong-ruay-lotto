@@ -165,7 +165,7 @@ const PromotionMain = ({ data }) => {
       setThumbAnimationSup,
     ])
     setPromotionMain(thumbFuncMain)
-  }, [])
+  })
 
   const thumbItemsSup = (items, [setThumbIndexSup, setThumbAnimationSup]) => {
     return docPromotionSup.map((data, i) => (
