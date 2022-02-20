@@ -117,7 +117,7 @@ export const Header = ({ isHomepage, setNavBar }) => {
       <Page>
         <Link to="/">
           <div className="logo">
-            <TestStyled src={logo} alt="Logo" />
+            <TestStyled src={logo} alt="thonglotto-logo" />
           </div>
         </Link>
         <nav>

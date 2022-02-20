@@ -83,7 +83,7 @@ const Homepage = ({ data }) => {
 
   return (
     <Layout isHomepage>
-      <Seo title="Home" />
+      <Seo title="Thong Ruay Thong lotto หวยออนไบน์อันดับ 1" />
       <main className="container">
         {!load && (
           <>

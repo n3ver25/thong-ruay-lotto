@@ -18,8 +18,8 @@ const ImageSize = styled.div`
 export const HomepageBanner = ({ doc }) => {
   const slider = (
     <AwesomeSlider>
-      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} />
-      <div data-src={doc?.body[0]?.items[1]?.banner_image?.fluid?.src} />
+      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} alt="thonglotto-banner1"/>
+      <div data-src={doc?.body[0]?.items[1]?.banner_image?.fluid?.src} alt="thonglotto-banner2"/>
     </AwesomeSlider>
   )
   return <ImageSize>{slider}</ImageSize>
