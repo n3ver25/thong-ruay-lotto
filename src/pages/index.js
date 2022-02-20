@@ -78,7 +78,7 @@ const Homepage = ({ data }) => {
     if (!data) return null
     setTimeout(() => {
       setLoad(false)
-    }, 1000)
+    }, 300)
   })
 
   return (

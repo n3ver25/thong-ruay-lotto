@@ -52,6 +52,12 @@ const ButtonCss = styled.button`
 
 const TextTitle = styled.div`
   h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /* number of lines to show */
+    line-clamp: 1;
+    -webkit-box-orient: vertical;
     font-size: 24px;
     line-height: 28px;
     letter-spacing: -0.015em;
@@ -74,6 +80,15 @@ const CustomizeCard = styled.div`
 `
 const TextPosition = styled.div`
   align-self: center;
+`
+
+const DetailFont = styled.div`
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* number of lines to show */
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
 `
 
 const customStyles = {
@@ -140,7 +155,9 @@ export const CardPromotionSup = ({ data }) => {
         </ImageStyled>
         <TextPromotionSup>
           <TextTitle>{RichText.render(data.promotion_sup_title.raw)}</TextTitle>
-          {RichText.render(data.promotion_sup_detail.raw)}
+          <DetailFont>
+            {RichText.render(data.promotion_sup_detail.raw)}
+          </DetailFont>
         </TextPromotionSup>
       </TestStyled>
     </>

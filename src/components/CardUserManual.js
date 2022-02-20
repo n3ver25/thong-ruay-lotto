@@ -79,6 +79,8 @@ const OptimizeFont = styled.div`
 const OptimizeFontAdapt = styled(OptimizeFont)`
   width: 100%;
   max-width: -webkit-fill-available;
+  height: 230px;
+  overflow-y: scroll;
 `
 
 const PositionButton = styled.div`

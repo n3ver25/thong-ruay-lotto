@@ -55,13 +55,19 @@ const OptimizeAliceCarousel = styled(AliceCarousel)`
 const CssThumb = styled.div`
   display: flex;
   width: 80vw;
+  @media (min-width: 767px) {
+    margin: auto;
+  }
+  .alice-carousel__stage-item {
+    margin: 0 10px;
+  }
+  margin-bottom: 20px;
 `
 
 const PrevButton = styled.div`
   align-self: center;
-  font-size: 165px;
+  font-size: 105px;
   cursor: pointer;
-  margin-right: 15px;
   @media (max-width: 1025px) {
     font-size: 55px;
   }
@@ -72,7 +78,7 @@ const PrevButton = styled.div`
 
 const NextButton = styled.div`
   align-self: center;
-  font-size: 165px;
+  font-size: 105px;
   cursor: pointer;
   @media (max-width: 1025px) {
     font-size: 55px;
@@ -165,7 +171,7 @@ const PromotionMain = ({ data }) => {
       setThumbAnimationSup,
     ])
     setPromotionMain(thumbFuncMain)
-  })
+  }, [])
 
   const thumbItemsSup = (items, [setThumbIndexSup, setThumbAnimationSup]) => {
     return docPromotionSup.map((data, i) => (
