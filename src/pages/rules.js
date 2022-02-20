@@ -7,15 +7,19 @@ import styled from 'styled-components'
 
 const PositionCard = styled.div`
   display: grid;
-  grid-template-columns: fit-content(40%) fit-content(40%);
-  grid-gap: 10%;
+  grid-template-columns: fit-content(50%) fit-content(50%);
+  grid-gap: 3%;
   justify-content: center;
   margin: 15px;
+
+  @media (max-width: 767px) {
+    grid-gap: 10%;
+  }
 `
 
 const HeaderPage = styled.div`
   height: 96px;
-  background: #FFC300;
+  background: #ffc300;
   margin: 20px 0;
   text-align: center;
   font-size: 36px;

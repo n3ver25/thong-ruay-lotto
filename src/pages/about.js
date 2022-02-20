@@ -64,6 +64,9 @@ const TitlePage = styled.div`
     @media (max-width: 1025px) {
       font-size: 14px;
     }
+    @media (max-width: 767px) {
+      font-size: 10px;
+    }
   }
 `
 const Service = styled.div`

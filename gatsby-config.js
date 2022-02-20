@@ -7,7 +7,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Thong Ruay Lotto',
-    description: 'Learn how to integrate Prismic into your Gatsby project.',
+    description: 'เว็ปหวยออนไลน์ที่ดีที่สุด',
   },
   plugins: [
     {

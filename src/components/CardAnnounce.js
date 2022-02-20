@@ -1,17 +1,19 @@
-import  React,{useState} from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Img from 'gatsby-image/withIEPolyfill'
 import { RichText } from 'prismic-reactjs'
 
 const TestStyled = styled.div`
-  display: ${props => props.showMore?``:`flex`} ;
+  display: ${(props) => (props.showMore ? `` : `flex`)};
   background-color: white;
   margin: 0px 23px 20px 23px;
   align-items: center;
   gap: 12px;
   padding: 20px;
-  ${props => props.showMore?`
-  padding: 6px;`:`
+  ${(props) =>
+    props.showMore
+      ? ``
+      : `
   @media (max-width: 767px) {
     max-height: 155px;
     overflow: hidden;
@@ -19,7 +21,6 @@ const TestStyled = styled.div`
   
   
 }`};
-  
 `
 
 const ImageStyled = styled.div`
@@ -36,10 +37,13 @@ const ImageOptimize = styled(Img)`
 const PositionFont = styled.div`
   margin: 20px 0;
   width: fit-content;
-  ${props => props.showMore?`width: 100%;`:`@media (max-width: 1025px) {
+  ${(props) =>
+    props.showMore
+      ? `width: 100%;`
+      : `@media (max-width: 1025px) {
     width: 50%;
   }`}
-  
+
   h1 {
     color: #9a0112;
     line-height: 51px;
@@ -57,31 +61,39 @@ const PositionFont = styled.div`
   }
 `
 const DetailText = styled.div`
-word-wrap: break-word;
-${props => props.showMore?``:`
+  word-wrap: break-word;
+
+  ${(props) =>
+    props.showMore
+      ? `
+     `
+      : `
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 2; /* number of lines to show */
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
 @media (max-width: 767px) {
   max-height: 50px;
   overflow: hidden;
   max-width: 186px;
 }`}
-  
 `
 
 const ShowMoreButton = styled.p`
-cursor: pointer;
+  color: #9a0112;
+  cursor: pointer;
   margin-bottom: 0px;
   @media (max-width: 767px) {
     font-size: 10px;
-  
-}
+  }
 `
 
 export const CardAnnounce = ({ data }) => {
-  const [showMore,setShowMore] = useState(false)
+  const [showMore, setShowMore] = useState(false)
 
-  const showMoreFunc = () =>(
-    setShowMore(!showMore)
-  )
+  const showMoreFunc = () => setShowMore(!showMore)
   return (
     <TestStyled showMore={showMore}>
       <ImageStyled>
@@ -93,12 +105,20 @@ export const CardAnnounce = ({ data }) => {
       </ImageStyled>
       <PositionFont showMore={showMore}>
         {RichText.render(data.data.text_title.raw)}
-        <DetailText showMore={showMore}>{RichText.asText(data.data.text_detail.raw)}</DetailText>
-{showMore?
-       <ShowMoreButton onClick={()=> showMoreFunc()}> แสดงน้อยลง... </ShowMoreButton>:
-       <ShowMoreButton onClick={()=> showMoreFunc()}> อ่านเพิ่มเติม... </ShowMoreButton>
-
-}
+        <DetailText showMore={showMore}>
+          {RichText.render(data.data.text_detail.raw)}
+        </DetailText>
+        {showMore ? (
+          <ShowMoreButton onClick={() => showMoreFunc()}>
+            {' '}
+            แสดงน้อยลง...{' '}
+          </ShowMoreButton>
+        ) : (
+          <ShowMoreButton onClick={() => showMoreFunc()}>
+            {' '}
+            อ่านเพิ่มเติม...{' '}
+          </ShowMoreButton>
+        )}
       </PositionFont>
     </TestStyled>
   )

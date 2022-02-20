@@ -7,15 +7,14 @@ const TestStyled = styled.div`
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  width: 100%;
   background: white;
   max-width: 553px;
   padding: 20px;
   @media (max-width: 1025px) {
-    height: 493px;
+    padding: 10px;
   }
   @media (max-width: 767px) {
-    height: 216px;
+    padding: 3px;
   }
 `
 
@@ -27,6 +26,7 @@ const Behind = styled.div`
   z-index: 1;
   top: 0;
   padding-top: 5%;
+  overflow-y: scroll;
   @media (max-width: 767px) {
     max-width: 140px;
     overflow: hidden;
@@ -47,6 +47,17 @@ const Behind = styled.div`
       color: #9a0112;
     }
   }
+  a {
+    overflow: hidden;
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 0;
+    @media (max-width: 767px) {
+      font-size: 9px;
+      line-height: 11px;
+      letter-spacing: -0.015em;
+    }
+  }
   overflow: hidden;
   font-size: 18px;
   line-height: 28px;
@@ -55,6 +66,10 @@ const Behind = styled.div`
     font-size: 9px;
     line-height: 11px;
     letter-spacing: -0.015em;
+    max-height: 220px;
+  }
+  p{
+    margin-bottom: 3px;
   }
 `
 const ImageStyled = styled.div`
@@ -103,6 +118,7 @@ const OptimizeFont = styled.div`
     font-size: 9px;
     line-height: 11px;
     letter-spacing: -0.015em;
+    height: 90px;
   }
   height: 150px;
 `
@@ -143,12 +159,12 @@ export const CardRule = ({ data }) => {
         </ImageStyled>
         <OptimizeFont>
           {RichText.render(data.rules_title.raw)}
-          <DetailFont>{RichText.asText(data.rules_detail.raw)}</DetailFont>
+          <DetailFont>{RichText.render(data.rules_detail.raw)}</DetailFont>
         </OptimizeFont>
         <Behind>
           <div>
             {RichText.render(data.rules_title.raw)}
-            {RichText.asText(data.rules_detail.raw)}
+            {RichText.render(data.rules_detail.raw)}
           </div>
         </Behind>
       </Card>

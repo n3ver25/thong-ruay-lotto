@@ -118,6 +118,14 @@ const ButtonClose = styled.button`
 const DetailBox = styled.div`
   max-height: 93px;
   overflow: hidden;
+  p {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* number of lines to show */
+    line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
   @media (max-width: 1025px) {
     max-height: 27px;
   }
@@ -128,16 +136,7 @@ const PositionClose = styled.div`
   justify-content: flex-end;
   padding: 0 60px;
 `
-const FontDetail = styled.div`
-  p {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* number of lines to show */
-    line-clamp: 3;
-    -webkit-box-orient: vertical;
-  }
-`
+
 const customStyles = {
   content: {
     top: '50%',
@@ -176,9 +175,9 @@ export const CardUserManual = ({ data }) => {
           </ImageStyledDialog>
           <OptimizeFontAdapt>
             {RichText.render(data.manual_user_title.raw)}
-            <FontDetail>
-              <p>{RichText.asText(data.manual_user_detail.raw)}</p>
-            </FontDetail>
+            <div>
+              <p>{RichText.render(data.manual_user_detail.raw)}</p>
+            </div>
           </OptimizeFontAdapt>
 
           <PositionClose>
