@@ -33,6 +33,10 @@ const HeaderPage = styled.div`
   justify-content: center;
 `
 
+const PositionDiv = styled.div`
+margin: 61px;
+`
+
 const Rules = ({ data }) => {
   if (!data) return null
   const doc = data.allPrismicRules.nodes
@@ -46,13 +50,15 @@ const Rules = ({ data }) => {
 
       <main className="container">
         <HeaderPage>กติกา THONG LOTTO</HeaderPage>
-        <PositionCard>
-          {doc.map((data) => (
-            <>
-              <CardRule data={data.data} />
-            </>
-          ))}
-        </PositionCard>
+        <PositionDiv>
+          <PositionCard>
+            {doc.map((data) => (
+              <>
+                <CardRule data={data.data} />
+              </>
+            ))}
+          </PositionCard>
+        </PositionDiv>
       </main>
     </Layout>
   )

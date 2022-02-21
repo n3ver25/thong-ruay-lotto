@@ -91,12 +91,12 @@ const Contact = ({ data }) => {
         <LayoutPage>
           <div>{RichText.render(doc.contact_title.raw)}</div>
           <div>{RichText.render(doc.contact_detail.raw)}</div>
-          <LinePosition href={'http://line.me/ti/p/@thongdeeee'}>
+          <LinePosition href={'http://lin.ee/pjj3X3H'}>
             <OptimizeIcon src={IconLine} />
-            LINE: @thongdeee
+            LINE: @thongruay
           </LinePosition>
         </LayoutPage>
-        <a href={'http://line.me/ti/p/@thongdeeee'}>
+        <a href={'http://lin.ee/pjj3X3H'}>
           <ButtonConnect>
             ติดต่อสอบถาม
             <ClickPosition>คลิก</ClickPosition>

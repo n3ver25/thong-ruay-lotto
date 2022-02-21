@@ -24,7 +24,7 @@ const TestStyled = styled.div`
 `
 
 const ImageStyled = styled.div`
-  width: 100%;
+  width: 120%;
   max-width: 417px;
   height: 300px;
 `
@@ -41,7 +41,7 @@ const PositionFont = styled.div`
     props.showMore
       ? `width: 100%;`
       : `@media (max-width: 1025px) {
-    width: 50%;
+    width: 30%;
   }`}
 
   h1 {

@@ -4,7 +4,11 @@ import styled from 'styled-components'
 import Img from 'gatsby-image/withIEPolyfill'
 
 const Position = styled.div`
-  width: 100%;
+  border: solid 2px;
+  padding: 15px;
+  margin: 15px;
+  border-radius: 15px;
+  border-color: yellow;
   margin-top: 55px;
   text-align-last: center;
 `

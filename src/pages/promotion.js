@@ -55,11 +55,12 @@ const OptimizeAliceCarousel = styled(AliceCarousel)`
 const CssThumb = styled.div`
   display: flex;
   width: 80vw;
+  margin: 15px 0;
   @media (min-width: 767px) {
-    margin: auto;
+    margin: 15px auto;
   }
   .alice-carousel__stage-item {
-    margin: 0 10px;
+    margin: 15px 10px;
   }
   margin-bottom: 20px;
 `
@@ -208,7 +209,7 @@ const PromotionMain = ({ data }) => {
       />
 
       <main className="container">
-        <HeaderPage>โปรโมชั่นเสริม THONG LOTTO</HeaderPage>
+        <HeaderPage>โปรโมชั่นหลัก THONG LOTTO</HeaderPage>
 
         <CssThumb className="thumbs">
           <PrevButton className="btn-prev" onClick={slidePrevSup}>
@@ -231,7 +232,6 @@ const PromotionMain = ({ data }) => {
             &rang;
           </NextButton>
         </CssThumb>
-        <HeaderPage>โปรโมชั่นหลัก THONG LOTTO</HeaderPage>
         <CssThumb className="thumbs">
           <PrevButton className="btn-prev" onClick={slidePrevMain}>
             &lang;
