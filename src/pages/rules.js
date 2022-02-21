@@ -34,7 +34,7 @@ const HeaderPage = styled.div`
 `
 
 const PositionDiv = styled.div`
-margin: 61px;
+margin: 61px 0;
 `
 
 const Rules = ({ data }) => {
