@@ -40,6 +40,15 @@ const ButtonCss = styled.button`
   border: none;
   color: white;
 `
+const TextTitleModel = styled.div`
+h1 {
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.015em;
+
+  color: #9a0112;
+}
+`
 
 const TextTitle = styled.div`
   h1 {
@@ -75,6 +84,8 @@ const CustomizeCard = styled.div`
   grid-gap: 45px;
   @media (max-width: 767px) {
     grid-template-columns: 1fr;
+    height: 400px;
+    overflow-y: scroll;
   }
 `
 const TextPosition = styled.div`
@@ -118,7 +129,7 @@ export const CardPromotionMain = ({ data }) => {
             />
           </ImageStyled>
           <TextPosition>
-            <TextTitle>{RichText.render(data.promiotion_title.raw)}</TextTitle>
+            <TextTitleModel>{RichText.render(data.promiotion_title.raw)}</TextTitleModel>
             <TextDetail>
               {RichText.render(data.promotion_main_detail.raw)}
             </TextDetail>
@@ -142,7 +153,9 @@ export const CardPromotionMain = ({ data }) => {
         </ImageStyled>
         <TextPromotionSup>
           <TextTitle>{RichText.render(data.promiotion_title.raw)}</TextTitle>
-          <DetailFont> {RichText.render(data.promotion_main_detail.raw)}
+          <DetailFont>
+            {' '}
+            {RichText.render(data.promotion_main_detail.raw)}
           </DetailFont>
         </TextPromotionSup>
       </TestStyled>
