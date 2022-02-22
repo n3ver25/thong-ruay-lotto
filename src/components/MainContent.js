@@ -120,8 +120,56 @@ const SizeImage = styled.div`
   }
 `
 const BorderLotto = styled.div`
-margin: 15px;
-max-height: 300px;
+  margin: 15px;
+  max-height: 300px;
+  border: solid 2px;
+  border-color: #e0b959;
+  border-radius: 20px;
+  .menu-container {
+    display: none;
+  }
+  a {
+    display: none;
+  }
+`
+const TitleLotto = styled.div`
+  margin: 15px;
+`
+
+const Lotto = styled.div`
+  margin: 15px;
+`
+
+const FlexLotto = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+`
+
+const TableLotto = styled.div`
+  border: 2px solid;
+  border-radius: 15px;
+  text-align: center;
+`
+
+const TextTitleLotto = styled.div`
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: -0.015em;
+  font-style: normal;
+  font-weight: normal;
+  margin: 5px 0;
+
+  color: #e0b959;
+`
+
+const TextDetailLotto = styled.div`
+  font-size: 24px;
+  line-height: 28px;
+  letter-spacing: -0.015em;
+  font-style: normal;
+  font-weight: normal;
+
+  color: white;
 `
 
 export const MainContent = ({ doc }) => {
@@ -133,12 +181,29 @@ export const MainContent = ({ doc }) => {
         <DetailText>{RichText.render(doc?.detail_banner?.raw)}</DetailText>
       </Position>
       <BorderLotto>
-        <iframe
-          src="https://www.lottery.co.th/show"
-          width="100%"
-          height="650"
-          frameborder="0"
-        />
+        <Lotto>
+          <TextTitleLotto>หวยรัฐบาล 17 กุมภาพันธ์ 2565</TextTitleLotto>
+          <TableLotto>
+            <div>
+              <TextTitleLotto>รางวัลที่ 1</TextTitleLotto>
+              <TextDetailLotto>098597</TextDetailLotto>
+            </div>
+            <FlexLotto>
+              <div>
+                <TextTitleLotto>สามตัวหน้า</TextTitleLotto>
+                <TextDetailLotto>644 085</TextDetailLotto>
+              </div>
+              <div>
+                <TextTitleLotto>สามตัวหลัง</TextTitleLotto>
+                <TextDetailLotto>816 592</TextDetailLotto>
+              </div>
+              <div>
+                <TextTitleLotto>สองตัวล่าง</TextTitleLotto>
+                <TextDetailLotto>57</TextDetailLotto>
+              </div>
+            </FlexLotto>
+          </TableLotto>
+        </Lotto>
       </BorderLotto>
       <SupTitle>
         เว็บหวยออนไลน์ ทองลอตโต้ (thong lotto) มีการเข้ารหัสข้อมูล 256 บิต
