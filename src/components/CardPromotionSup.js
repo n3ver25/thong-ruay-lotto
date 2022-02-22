@@ -90,6 +90,8 @@ const DetailFont = styled.div`
   -webkit-line-clamp: 2; /* number of lines to show */
   line-clamp: 2;
   -webkit-box-orient: vertical;
+  max-height: 55px;
+
 `
 
 const customStyles = {
