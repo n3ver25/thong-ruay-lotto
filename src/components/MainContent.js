@@ -8,7 +8,7 @@ const Position = styled.div`
   padding: 15px;
   margin: 15px;
   border-radius: 15px;
-  border-color: yellow;
+  border-color: #e0b959 !important;
   margin-top: 55px;
   text-align-last: center;
 `

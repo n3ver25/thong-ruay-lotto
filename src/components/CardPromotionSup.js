@@ -8,23 +8,14 @@ const TestStyled = styled.div`
   width: 100%;
   background: white;
   cursor: pointer;
+  margin: auto;
   max-width: 372px;
-  @media (max-width: 1025px) {
-    max-height: 372px;
-  }
 `
 
 const ImageStyled = styled.div`
   width: 100%;
   max-width: 372px;
   height: 510px;
-  @media (max-width: 1025px) {
-    height: 385px;
-  }
-
-  @media (max-width: 1025px) {
-    height: 220px;
-  }
 `
 
 const ImageOptimize = styled(Img)`

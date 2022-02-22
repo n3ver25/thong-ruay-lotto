@@ -17,7 +17,7 @@ const TestStyled = styled.div`
   @media (max-width: 767px) {
     max-height: 155px;
     overflow: hidden;
-    padding: 6px;
+    padding: 0px;
   
   
 }`};
@@ -27,6 +27,9 @@ const ImageStyled = styled.div`
   width: 120%;
   max-width: 417px;
   height: 300px;
+  @media (max-width: 767px) {
+    width: 70%;
+  }
 `
 
 const ImageOptimize = styled(Img)`

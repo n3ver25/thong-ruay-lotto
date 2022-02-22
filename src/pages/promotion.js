@@ -7,6 +7,8 @@ import { CardPromotionMain } from '../components/CardPromotionMain'
 import styled from 'styled-components'
 import AliceCarousel from 'react-alice-carousel'
 import 'react-alice-carousel/lib/alice-carousel.css'
+import Carousel from 'react-multi-carousel'
+import 'react-multi-carousel/lib/styles.css'
 
 const HeaderPage = styled.div`
   height: 96px;
@@ -60,7 +62,7 @@ const CssThumb = styled.div`
     margin: 15px auto;
   }
   .alice-carousel__stage-item {
-    margin: 15px 10px;
+    margin: 0 15px;
   }
   margin-bottom: 20px;
 `
@@ -196,9 +198,23 @@ const PromotionMain = ({ data }) => {
   }
 
   const responsive = {
-    0: { items: 1 },
-    568: { items: 2 },
-    1024: { items: 3 },
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5,
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3,
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2,
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1,
+    },
   }
 
   return (
@@ -210,8 +226,24 @@ const PromotionMain = ({ data }) => {
 
       <main className="container">
         <HeaderPage>โปรโมชั่นหลัก THONG LOTTO</HeaderPage>
-
-        <CssThumb className="thumbs">
+        <Carousel responsive={responsive}>
+          {docPromotionSup.map((data, i) => (
+            <div
+              className="thumb"
+              onClick={() => (setThumbIndexSup(i), setThumbAnimationSup(true))}
+            >
+              <CardPromotionSup data={data.data} />
+            </div>
+          ))}
+        </Carousel>
+        <Carousel responsive={responsive}>
+          {docPromotionMain.map((data, i) => (
+            <div>
+              <CardPromotionMain data={data.data} />
+            </div>
+          ))}
+        </Carousel>
+        {/* <CssThumb className="thumbs">
           <PrevButton className="btn-prev" onClick={slidePrevSup}>
             &lang;
           </PrevButton>
@@ -252,7 +284,7 @@ const PromotionMain = ({ data }) => {
           <NextButton className="btn-next" onClick={slideNextMain}>
             &rang;
           </NextButton>
-        </CssThumb>
+        </CssThumb> */}
       </main>
     </Layout>
   )
