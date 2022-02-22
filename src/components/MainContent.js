@@ -119,6 +119,10 @@ const SizeImage = styled.div`
     height: 26px !important;
   }
 `
+const BorderLotto = styled.div`
+margin: 15px;
+max-height: 300px;
+`
 
 export const MainContent = ({ doc }) => {
   const image_bank = doc?.body[1].items
@@ -128,7 +132,14 @@ export const MainContent = ({ doc }) => {
         <TitleText>{RichText.render(doc?.text_title?.raw)}</TitleText>
         <DetailText>{RichText.render(doc?.detail_banner?.raw)}</DetailText>
       </Position>
-
+      <BorderLotto>
+        <iframe
+          src="https://www.lottery.co.th/show"
+          width="100%"
+          height="650"
+          frameborder="0"
+        />
+      </BorderLotto>
       <SupTitle>
         เว็บหวยออนไลน์ ทองลอตโต้ (thong lotto) มีการเข้ารหัสข้อมูล 256 บิต
         ข้อมูลของท่านมีความปลอดภัย 100%
