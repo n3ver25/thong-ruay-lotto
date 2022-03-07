@@ -243,48 +243,6 @@ const PromotionMain = ({ data }) => {
             </div>
           ))}
         </Carousel>
-        {/* <CssThumb className="thumbs">
-          <PrevButton className="btn-prev" onClick={slidePrevSup}>
-            &lang;
-          </PrevButton>
-
-          <OptimizeAliceCarousel
-            activeIndex={thumbIndexSup}
-            autoHeight
-            disableDotsControls
-            disableButtonsControls
-            items={promotionSup}
-            mouseTracking={false}
-            onSlideChanged={syncThumbsSup}
-            touchTracking={!mainAnimationSup}
-            responsive={responsive}
-          />
-
-          <NextButton className="btn-next" onClick={slideNextSup}>
-            &rang;
-          </NextButton>
-        </CssThumb>
-        <CssThumb className="thumbs">
-          <PrevButton className="btn-prev" onClick={slidePrevMain}>
-            &lang;
-          </PrevButton>
-
-          <OptimizeAliceCarousel
-            activeIndex={thumbIndexMain}
-            autoHeight
-            disableDotsControls
-            disableButtonsControls
-            items={promotionMain}
-            mouseTracking={false}
-            onSlideChanged={syncThumbsMain}
-            touchTracking={!mainAnimationMain}
-            responsive={responsive}
-          />
-
-          <NextButton className="btn-next" onClick={slideNextMain}>
-            &rang;
-          </NextButton>
-        </CssThumb> */}
       </main>
     </Layout>
   )
