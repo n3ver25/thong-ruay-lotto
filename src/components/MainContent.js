@@ -182,24 +182,24 @@ export const MainContent = ({ doc }) => {
       </Position>
       <BorderLotto>
         <Lotto>
-          <TextTitleLotto>หวยรัฐบาล 1 มีนาคม 2565</TextTitleLotto>
+          <TextTitleLotto>หวยรัฐบาล 16 มีนาคม 2565</TextTitleLotto>
           <TableLotto>
             <div>
               <TextTitleLotto>รางวัลที่ 1</TextTitleLotto>
-              <TextDetailLotto>061905</TextDetailLotto>
+              <TextDetailLotto>737867</TextDetailLotto>
             </div>
             <FlexLotto>
               <div>
                 <TextTitleLotto>สามตัวหน้า</TextTitleLotto>
-                <TextDetailLotto>834 236</TextDetailLotto>
+                <TextDetailLotto>985 349</TextDetailLotto>
               </div>
               <div>
                 <TextTitleLotto>สามตัวหลัง</TextTitleLotto>
-                <TextDetailLotto>691 234</TextDetailLotto>
+                <TextDetailLotto>788 989</TextDetailLotto>
               </div>
               <div>
                 <TextTitleLotto>สองตัวล่าง</TextTitleLotto>
-                <TextDetailLotto>07</TextDetailLotto>
+                <TextDetailLotto>03</TextDetailLotto>
               </div>
             </FlexLotto>
           </TableLotto>
