@@ -186,20 +186,20 @@ export const MainContent = ({ doc }) => {
           <TableLotto>
             <div>
               <TextTitleLotto>รางวัลที่ 1</TextTitleLotto>
-              <TextDetailLotto>970618</TextDetailLotto>
+              <TextDetailLotto>395919</TextDetailLotto>
             </div>
             <FlexLotto>
               <div>
                 <TextTitleLotto>สามตัวหน้า</TextTitleLotto>
-                <TextDetailLotto>738 391</TextDetailLotto>
+                <TextDetailLotto>289 859</TextDetailLotto>
               </div>
               <div>
                 <TextTitleLotto>สามตัวหลัง</TextTitleLotto>
-                <TextDetailLotto>870 578</TextDetailLotto>
+                <TextDetailLotto>508 413</TextDetailLotto>
               </div>
               <div>
                 <TextTitleLotto>สองตัวล่าง</TextTitleLotto>
-                <TextDetailLotto>10</TextDetailLotto>
+                <TextDetailLotto>58</TextDetailLotto>
               </div>
             </FlexLotto>
           </TableLotto>
