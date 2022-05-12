@@ -127,6 +127,7 @@ export const CardPromotionMain = ({ data }) => {
               fluid={data?.promotion_image?.fluid}
               objectFit="contain"
               objectPosition="50% 50%"
+              alt="ทองรวยล๊อตโต้ เว็บหวยที่มีโปรโมชันมากมาย อัตราจ่ายสูง 2 ตัวบาทละ 90 มีหวยให้เล่นครบ แทงหวยครบ 10 วัน รับทันที 200 เครดิต, โบนัสตามระดับ วีไอพี STAR มากถึง 10 ชั้น แทงมากเลื่อนขั้น ได้อีกมาก"
             />
           </ImageStyled>
           <TextPosition>

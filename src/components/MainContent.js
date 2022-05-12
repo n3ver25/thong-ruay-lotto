@@ -132,9 +132,6 @@ const BorderLotto = styled.div`
     display: none;
   }
 `
-const TitleLotto = styled.div`
-  margin: 15px;
-`
 
 const Lotto = styled.div`
   margin: 15px;
@@ -210,7 +207,8 @@ export const MainContent = ({ doc }) => {
         ข้อมูลของท่านมีความปลอดภัย 100%
       </SupTitle>
       <ImageSSL>
-        <img src={doc?.image_ssl?.fluid.src} />
+        <img src={doc?.image_ssl?.fluid.src} alt="เว็บหวยออนไลน์ ทองลอตโต้ (thong lotto) มีการเข้ารหัสข้อมูล 256 บิต
+        ข้อมูลของท่านมีความปลอดภัย 100%" />
       </ImageSSL>
       <PositionBanker>
         <BankerTitle>

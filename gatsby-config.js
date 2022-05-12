@@ -7,7 +7,7 @@ require('dotenv').config({
 module.exports = {
   siteMetadata: {
     title: 'Thong Ruay Lotto',
-    description: 'เว็ปหวยออนไลน์ที่ดีที่สุด',
+    description: 'Tong ruay ทองรวย แทงหวยออนไลน์ ✓ หวยรัฐบาล ครบทุกหวย หวยรัฐบาล หวยหุ้น หวยลาว หวยฮานอย และหวยยี่กี ยอดนิยม ฝาก-ถอนเร็ว สะสมแต้ม รับฟรีเครดิต VIP.',
   },
   plugins: [
     {

@@ -129,6 +129,7 @@ export const CardPromotionSup = ({ data }) => {
               fluid={data?.promotion_title_sup?.fluid}
               objectFit="contain"
               objectPosition="50% 50%"
+              alt="THONG RUAY"
             />
           </ImageStyled>
           <TextPosition>

@@ -92,7 +92,7 @@ const Contact = ({ data }) => {
           <div>{RichText.render(doc.contact_title.raw)}</div>
           <div>{RichText.render(doc.contact_detail.raw)}</div>
           <LinePosition href={'http://lin.ee/pjj3X3H'}>
-            <OptimizeIcon src={IconLine} />
+            <OptimizeIcon src={IconLine} alt={'Line:@thongruay'} />
             LINE: @thongruay
           </LinePosition>
         </LayoutPage>

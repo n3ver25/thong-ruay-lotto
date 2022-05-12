@@ -173,6 +173,11 @@ export const CardUserManual = ({ data }) => {
               fluid={data?.manual_user_image?.fluid}
               objectFit="contain"
               objectPosition="50% 50%"
+              alt="`หวยยี่กี` เป็นอีกหวยยอดนิยม เล่นได้ตลอดวัน
+              `หวยฮานอย` มีให้เล่นทุกวัน เพราะหวยออกทุกวัน 
+              `หวยลาว` ก็เป็นหวยที่คนไทยนิยมเล่น 
+              `หวยรัฐบาลไทย`
+              "
             />
           </ImageStyledDialog>
           <OptimizeFontAdapt>
@@ -193,6 +198,11 @@ export const CardUserManual = ({ data }) => {
             fluid={data?.manual_user_image?.fluid}
             objectFit="contain"
             objectPosition="50% 50%"
+            alt="`หวยยี่กี` เป็นอีกหวยยอดนิยม เล่นได้ตลอดวัน
+              `หวยฮานอย` มีให้เล่นทุกวัน เพราะหวยออกทุกวัน 
+              `หวยลาว` ก็เป็นหวยที่คนไทยนิยมเล่น 
+              `หวยรัฐบาลไทย`
+              "
           />
         </ImageStyled>
         <OptimizeFont>

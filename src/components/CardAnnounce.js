@@ -104,6 +104,7 @@ export const CardAnnounce = ({ data }) => {
           fluid={data?.data?.image_announce?.fluid}
           objectFit="contain"
           objectPosition="50% 50%"
+          alt="หวยออนไลน์"
         />
       </ImageStyled>
       <PositionFont showMore={showMore}>

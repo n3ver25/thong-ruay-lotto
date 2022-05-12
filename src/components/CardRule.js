@@ -65,7 +65,7 @@ const Behind = styled.div`
     letter-spacing: -0.015em;
     max-height: 220px;
   }
-  p{
+  p {
     margin-bottom: 3px;
   }
 `
@@ -152,6 +152,10 @@ export const CardRule = ({ data }) => {
             fluid={data?.rules_image?.fluid}
             objectFit="contain"
             objectPosition="50% 50%"
+            alt="
+            ฝาก ถอน เร็ว
+            จัดการทุกทรานแซคชันฝาก ถอน ด้วยระบบอัตโนมัติ ทุกขั้นตอน ทุนหนา จ่ายจริง 100%
+            "
           />
         </ImageStyled>
         <OptimizeFont>

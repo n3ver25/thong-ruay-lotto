@@ -18,8 +18,8 @@ const ImageSize = styled.div`
 export const HomepageBanner = ({ doc }) => {
   const slider = (
     <AwesomeSlider>
-      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} alt="thonglotto-banner1"/>
-      <div data-src={doc?.body[0]?.items[1]?.banner_image?.fluid?.src} alt="thonglotto-banner2"/>
+      <div data-src={doc?.body[0]?.items[0]?.banner_image?.fluid?.src} alt="รางวัลกับ `ทองรวย`"/>
+      <div data-src={doc?.body[0]?.items[1]?.banner_image?.fluid?.src} alt="Thong ruay แทงหวยออนไลน์ ✓ หวยรัฐบาล ครบทุกหวย หวยรัฐบาล หวยหุ้น หวยลาว หวยฮานอย และหวยยี่กี ยอดนิยม ฝาก-ถอนเร็ว สะสมแต้ม รับฟรีเครดิต VIP."/>
     </AwesomeSlider>
   )
   return <ImageSize>{slider}</ImageSize>
