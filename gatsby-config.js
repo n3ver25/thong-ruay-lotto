@@ -1,9 +1,5 @@
 // gatsby-config.js file
 
-require('dotenv').config({
-  path: `.env.${process.env.NODE_ENV}`,
-})
-
 module.exports = {
   siteMetadata: {
     title: 'Thong Ruay Lotto',
@@ -13,7 +9,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-prismic',
       options: {
-        repositoryName: process.env.GATSBY_PRISMIC_REPO_NAME,
+        repositoryName: "thong-ruay-lotto",
         schemas: {
           homepage: require('./custom_types/homepage.json'),
           navigation: require('./custom_types/navigation.json'),
